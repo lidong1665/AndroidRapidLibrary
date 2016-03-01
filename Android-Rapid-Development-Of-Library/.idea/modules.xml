@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Rapid-Development-Of-Library.iml" filepath="$PROJECT_DIR$/Android-Rapid-Development-Of-Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_library/android_library.iml" filepath="$PROJECT_DIR$/android_library/android_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng_library/umeng_library.iml" filepath="$PROJECT_DIR$/umeng_library/umeng_library.iml" />
+    </modules>
+  </component>
+</project>
