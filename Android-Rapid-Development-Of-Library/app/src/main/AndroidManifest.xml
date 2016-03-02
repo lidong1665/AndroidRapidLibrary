@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lidong.demo.android_rapid_development_of_library" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +19,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.WeatherActivity"
+            android:label="@string/title_activity_weather"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".view.CircleProgressViewActivity"
+            android:label="@string/title_activity_circle_progress_view"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

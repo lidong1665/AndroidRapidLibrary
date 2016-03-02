@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- 自定义Loading Dialog -->
+    <style name="loading_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 圆形头像 -->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+     <!--listview 字体大小,颜色,padding左右上下大小,图片的大小-->
+
+    <!--button 颜色,边角,间距,字体大小-->
+
+   <!-- 偏好项边距,字体大小,颜色,-->
+
+</resources>
