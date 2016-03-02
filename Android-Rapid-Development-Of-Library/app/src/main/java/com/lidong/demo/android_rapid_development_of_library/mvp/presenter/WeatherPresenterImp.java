@@ -12,6 +12,9 @@ import com.lidong.demo.android_rapid_development_of_library.mvp.view.WeatherView
  */
 public class WeatherPresenterImp  implements WeatherPresenter ,WeatherModelImp.WeatherOnListener{
 
+    /**
+     * WeatherModel和WeatherView都是通过接口来实现，这就Java设计原则中依赖倒置原则使用
+     */
    private WeatherModel mWeatherModel;
    private WeatherView mWeatherView;
 
