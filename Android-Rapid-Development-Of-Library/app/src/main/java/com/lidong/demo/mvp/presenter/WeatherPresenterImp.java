@@ -39,6 +39,6 @@ public class WeatherPresenterImp  implements WeatherPresenter,WeatherModelImp.We
     @Override
     public void onFailure(Throwable e) {
         mWeatherView.hideProgress();
-        Log.d("-------","onFailure"+e.getMessage());
+        Log.d("-------", "onFailure" + e.getMessage());
     }
 }

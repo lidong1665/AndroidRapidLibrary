@@ -32,7 +32,7 @@ public class PushDemoReceiver extends BroadcastReceiver {
                 Log.d("GetuiSdkDemo", "taskid : " + taskid);
                 String messageid = bundle.getString("messageid");
                 Log.d("GetuiSdkDemo", "messageid : " + messageid);
-                String message = bundle.getString("message");
+                String message = bundle.getString("messageContent");
                 Log.d("GetuiSdkDemo", "messageid : " + message);
                 // smartPush第三方回执调用接口，actionid范围为90000-90999，可根据业务场景执行
                 boolean result = PushManager.getInstance().sendFeedbackMessage(context, taskid, messageid, 90001);
@@ -64,16 +64,19 @@ public class PushDemoReceiver extends BroadcastReceiver {
                 break;
 
             case PushConsts.THIRDPART_FEEDBACK:
-                /*
-                 * String appid = bundle.getString("appid"); String taskid =
-                 * bundle.getString("taskid"); String actionid = bundle.getString("actionid");
-                 * String result = bundle.getString("result"); long timestamp =
-                 * bundle.getLong("timestamp");
-                 * 
-                 * Log.d("GetuiSdkDemo", "appid = " + appid); Log.d("GetuiSdkDemo", "taskid = " +
-                 * taskid); Log.d("GetuiSdkDemo", "actionid = " + actionid); Log.d("GetuiSdkDemo",
-                 * "result = " + result); Log.d("GetuiSdkDemo", "timestamp = " + timestamp);
-                 */
+
+                 String appid1 = bundle.getString("appid");
+                 String taskid1 = bundle.getString("taskid");
+                String actionid = bundle.getString("actionid");
+                 String result1 = bundle.getString("result");
+                long timestamp = bundle.getLong("timestamp");
+
+                 Log.d("GetuiSdkDemo", "appid = " + appid1);
+                Log.d("GetuiSdkDemo", "taskid = " + taskid1);
+                Log.d("GetuiSdkDemo", "actionid = " + actionid);
+                Log.d("GetuiSdkDemo", "result = " + result1);
+                Log.d("GetuiSdkDemo", "timestamp = " + timestamp);
+
                 break;
 
             default:

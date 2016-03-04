@@ -22,7 +22,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MVP模式的实现"
+        android:text="集成个推实现仿照微信登录"
         android:gravity="left|center_vertical"
         android:id="@+id/button3" />
 </LinearLayout>

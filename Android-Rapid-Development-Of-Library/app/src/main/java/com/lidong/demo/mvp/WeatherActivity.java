@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
 import com.lidong.demo.R;
@@ -59,7 +58,6 @@ public class WeatherActivity extends AppCompatActivity implements WeatherView {
     @Override
     public void hideProgress() {
         LoadingUIHelper.hideDialogForLoading();
-        Toast.makeText(this,"服务器异常",Toast.LENGTH_SHORT).show();
     }
 
     @Override
