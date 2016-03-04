@@ -1,4 +1,4 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp;
+package com.lidong.demo.mvp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +8,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
-import com.lidong.demo.android_rapid_development_of_library.R;
-import com.lidong.demo.android_rapid_development_of_library.mvp.bean.WeatherData;
-import com.lidong.demo.android_rapid_development_of_library.mvp.presenter.WeatherPresenter;
-import com.lidong.demo.android_rapid_development_of_library.mvp.presenter.WeatherPresenterImp;
-import com.lidong.demo.android_rapid_development_of_library.mvp.view.WeatherView;
+import com.lidong.demo.R;
+import com.lidong.demo.mvp.bean.WeatherData;
+import com.lidong.demo.mvp.presenter.WeatherPresenter;
+import com.lidong.demo.mvp.presenter.WeatherPresenterImp;
+import com.lidong.demo.mvp.view.WeatherView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -68,7 +68,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherView {
         textView1.setText("城市："+weatherData.getResult().getToday().getCity());
         textView2.setText("日期："+weatherData.getResult().getToday().getWeek());
         textView3.setText("今日温度："+weatherData.getResult().getToday().getTemperature());
-        textView4.setText("天气标识：" +WeatherIDUtils.transfer(weatherData.getResult().getToday().getWeather_id().getFa()));
+        textView4.setText("天气标识：" + WeatherIDUtils.transfer(weatherData.getResult().getToday().getWeather_id().getFa()));
         textView5.setText("穿衣指数：" + weatherData.getResult().getToday().getDressing_advice());
         textView6.setText("干燥指数："+weatherData.getResult().getToday().getDressing_index());
         textView7.setText("紫外线强度："+weatherData.getResult().getToday().getUv_index());

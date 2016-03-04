@@ -1,11 +1,11 @@
-package com.lidong.demo.android_rapid_development_of_library.view;
+package com.lidong.demo.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.lidong.android_ibrary.CircleProgressView;
-import com.lidong.demo.android_rapid_development_of_library.R;
+import com.lidong.demo.R;
 
 public class CircleProgressViewActivity extends AppCompatActivity {
 

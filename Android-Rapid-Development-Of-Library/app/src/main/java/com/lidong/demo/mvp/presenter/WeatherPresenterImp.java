@@ -1,16 +1,16 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp.presenter;
+package com.lidong.demo.mvp.presenter;
 
 import android.util.Log;
 
-import com.lidong.demo.android_rapid_development_of_library.mvp.bean.WeatherData;
-import com.lidong.demo.android_rapid_development_of_library.mvp.model.WeatherModel;
-import com.lidong.demo.android_rapid_development_of_library.mvp.model.WeatherModelImp;
-import com.lidong.demo.android_rapid_development_of_library.mvp.view.WeatherView;
+import com.lidong.demo.mvp.bean.WeatherData;
+import com.lidong.demo.mvp.model.WeatherModel;
+import com.lidong.demo.mvp.model.WeatherModelImp;
+import com.lidong.demo.mvp.view.WeatherView;
 
 /**
  * Created by lidong on 2016/3/2.
  */
-public class WeatherPresenterImp  implements WeatherPresenter ,WeatherModelImp.WeatherOnListener{
+public class WeatherPresenterImp  implements WeatherPresenter,WeatherModelImp.WeatherOnListener{
 
     /**
      * WeatherModel和WeatherView都是通过接口来实现，这就Java设计原则中依赖倒置原则使用

@@ -1,6 +1,7 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp.view;
+package com.lidong.demo.mvp.view;
 
-import com.lidong.demo.android_rapid_development_of_library.mvp.bean.WeatherData;
+
+import com.lidong.demo.mvp.bean.WeatherData;
 
 /**
  * Created by lidong on 2016/3/2.

@@ -1,4 +1,4 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp.bean;
+package com.lidong.demo.mvp.bean;
 
 import java.util.List;
 

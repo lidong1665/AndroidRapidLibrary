@@ -1,6 +1,7 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp.api;
+package com.lidong.demo.mvp.api;
 
-import com.lidong.demo.android_rapid_development_of_library.mvp.bean.WeatherData;
+
+import com.lidong.demo.mvp.bean.WeatherData;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;

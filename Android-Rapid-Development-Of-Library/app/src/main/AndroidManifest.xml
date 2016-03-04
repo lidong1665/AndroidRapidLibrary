@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lidong.demo.android_rapid_development_of_library" >
+    package="com.lidong.demo" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.lidong.demo.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -21,13 +21,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mvp.WeatherActivity"
+            android:name="com.lidong.demo.mvp.WeatherActivity"
             android:label="@string/title_activity_weather"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".view.CircleProgressViewActivity"
+            android:name="com.lidong.demo.view.CircleProgressViewActivity"
             android:label="@string/title_activity_circle_progress_view"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.lidong.demo.view.TestWebViewFragmentActivity"
+            android:label="@string/title_activity_test_web_view_fragment"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

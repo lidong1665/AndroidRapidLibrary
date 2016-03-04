@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_weather">WeatherActivity</string>
     <string name="title_activity_circle_progress_view">CircleProgressViewActivity</string>
+    <string name="title_activity_test_web_view_fragment">TestWebViewFragmentActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

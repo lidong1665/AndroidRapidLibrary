@@ -1,7 +1,8 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp.model;
+package com.lidong.demo.mvp.model;
 
-import com.lidong.demo.android_rapid_development_of_library.mvp.api.ApiManager;
-import com.lidong.demo.android_rapid_development_of_library.mvp.bean.WeatherData;
+
+import com.lidong.demo.mvp.api.ApiManager;
+import com.lidong.demo.mvp.bean.WeatherData;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -21,7 +22,7 @@ public class WeatherModelImp  implements WeatherModel {
 
     @Override
     public void getWeatherData(String format,String city) {
-                ApiManager.getWeatherData(format,city).subscribeOn(Schedulers.io())
+                ApiManager.getWeatherData(format, city).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<WeatherData>() {
                     @Override

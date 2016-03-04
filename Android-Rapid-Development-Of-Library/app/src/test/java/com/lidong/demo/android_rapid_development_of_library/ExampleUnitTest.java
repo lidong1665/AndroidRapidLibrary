@@ -1,4 +1,4 @@
-package com.lidong.demo.android_rapid_development_of_library;
+package com.lidong.demo.demo;
 
 import org.junit.Test;
 

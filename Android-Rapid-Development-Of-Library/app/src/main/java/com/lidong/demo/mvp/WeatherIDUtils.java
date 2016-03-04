@@ -1,4 +1,4 @@
-package com.lidong.demo.android_rapid_development_of_library.mvp;
+package com.lidong.demo.mvp;
 
 /**
  * Created by Administrator on 2016/3/2.
