@@ -5,17 +5,28 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.lidong.demo.android_rapid_development_of_library"
+        applicationId "com.lidong.demo"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
+        manifestPlaceholders = [
+                GETUI_APP_ID : "2TP3FVe28v50iTvkffYio5",
+                GETUI_APP_KEY : "0DFJrDtPPn7vVnGYhptBt7",
+                GETUI_APP_SECRET : "n7Qd3Z0wjP94vzENSQ9Lb5",
+                PACKAGE_NAME : applicationId
+
+        ]
     }
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+            exclude 'lib/armeabi/libgetuiext.so'
     }
 }
 
@@ -26,5 +37,8 @@ dependencies {
     compile project(':umeng_library')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.getui:sdk:+'
+    compile 'com.getui:ext:+'
     compile 'com.android.support:support-v4:23.1.1'
+    compile files('libs/json_simple-1.1.jar')
 }

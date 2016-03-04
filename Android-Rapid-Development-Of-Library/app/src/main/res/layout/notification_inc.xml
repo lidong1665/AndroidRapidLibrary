@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <ImageView
+        android:id="@+id/notification_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/notification_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:orientation="vertical"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside" />
+
+            <!-- 更新提示界面 -->
+            <LinearLayout
+                android:id="@+id/notification_right"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp" >
+
+                <LinearLayout
+                    android:id="@+id/notification_right_left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/notification_right_top_left"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/notification_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/notification_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/notification_right_under_left"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/notification_fullsize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="#111111"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/notification_diffsize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textColor="#008000"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:layout_marginRight="5dip"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/notification_update_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/notification_update_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 下载提示界面 -->
+            <RelativeLayout android:id="@+id/download_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingLeft="3dp"
+                android:orientation="horizontal">
+                <LinearLayout android:id="@+id/status" 
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentRight="true"
+	                android:layout_centerVertical="true"
+	                android:gravity="center"
+	                android:layout_marginRight="5dip"
+	                android:orientation="vertical" >
+	                <ImageView android:id="@+id/status_img" 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" />
+	                <TextView android:id="@+id/status_txt"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:textSize="11sp"
+	                    android:textColor="@android:color/black" />
+	            </LinearLayout>
+	            
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_toLeftOf="@id/status"
+	                android:orientation="vertical" >
+	
+	                <LinearLayout
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="horizontal" >
+	
+	                    <LinearLayout
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:layout_weight="1"
+	                        android:orientation="horizontal" >
+	
+	                        <TextView
+	                            android:id="@+id/download_app_name"
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:textColor="#000000"
+	                            android:textSize="16sp"
+	                            android:textStyle="bold" />
+	
+	                        <TextView
+	                            android:id="@+id/download_app_version"
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:paddingLeft="10dp"
+	                            android:textColor="#000000"
+	                            android:textSize="16sp"
+	                            android:textStyle="bold" />
+	                    </LinearLayout>
+	
+	                    <!-- <LinearLayout
+	                        android:layout_width="40dp"
+	                        android:layout_height="wrap_content"
+	                        android:orientation="horizontal" >
+	
+	                        <TextView
+	                            android:id="@+id/download_progress_percent"
+	                            android:layout_width="wrap_content"
+	                            android:layout_height="wrap_content"
+	                            android:gravity="center"
+	                            android:textColor="#000000"
+	                            android:textSize="14sp"
+	                            android:textStyle="normal" />
+	                    </LinearLayout> -->
+	                </LinearLayout>
+	
+	                <LinearLayout
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+	                    android:orientation="vertical"
+	                    android:paddingRight="5dp"
+	                    android:paddingTop="10dp" >
+	
+	                    <!--
+	                         <com.igexin.increment.view.ProgressBar
+				            android:id="@+id/downlaod_progress_horizontal"
+				            android:layout_width="fill_parent"
+				            android:layout_height="10dp"/>
+	                    -->
+	
+	                    <ProgressBar
+	                        android:id="@+id/downlaod_progress_horizontal"
+	                        style="?android:attr/progressBarStyleHorizontal"
+	                        android:secondaryProgress="100"
+	                        android:layout_width="fill_parent"
+	                        android:layout_height="10dp"
+	                        android:max="100" >
+	                    </ProgressBar>
+	                </LinearLayout>
+	            </LinearLayout>
+			</RelativeLayout>
+			
+            <!-- 下载完成提示界面 -->
+            <LinearLayout
+                android:id="@+id/setup_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/setup_app_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/setup_app_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/setup_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:textColor="#111111"
+                            android:textSize="13sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_marginRight="5dip"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/setup_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/setup_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

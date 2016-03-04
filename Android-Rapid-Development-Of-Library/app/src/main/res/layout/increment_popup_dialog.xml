@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00000000"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/m_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <!-- 标题 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="5dip"
+            android:gravity="center|left" >
+
+            <TextView
+                android:id="@+id/app_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#191919"
+                android:textSize="20dip" />
+            <!--
+                 <ImageView 
+	            android:id="@+id/close"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/icon_close"
+	            />
+            -->
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="#666666" />
+        <!-- 更新内容 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="10dip" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/app_logo"
+                    android:layout_width="48dip"
+                    android:layout_height="48dip"
+                     />
+
+                <ImageView
+                    android:id="@+id/app_logo_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                     />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="#191919"
+                        android:textSize="16dip" />
+
+                    <TextView
+                        android:id="@+id/app_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:textColor="#191919"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/app_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#191919"
+                        android:textSize="12dip" />
+
+                    <TextView
+                        android:id="@+id/app_need_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:textColor="#191919"
+                        android:textSize="12dip"
+                        android:visibility="gone"
+                         />
+                </LinearLayout>
+				<!-- style="@style/progressbarStyle_Horizontal_Blue" -->
+                <ProgressBar
+                    android:id="@+id/app_progress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="8dip"
+                    android:layout_marginTop="5dip"
+                    android:secondaryProgress="100"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100" />
+                <!--
+                         <ImageView 
+	                    android:id="@+id/click_download"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="5dip"
+	                    android:src="@drawable/download_start"
+	                    />
+                -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="55dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/click_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     />
+
+                <TextView
+                    android:id="@+id/upload_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:textColor="#191919"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 更新说明 -->
+
+        <LinearLayout
+            android:id="@+id/update"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/update_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#191919"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="170dip"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/update_msg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#191919"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/update_msg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#191919"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 下拉框 -->
+
+        <LinearLayout
+            android:id="@+id/down_click_linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingBottom="5dip"
+            android:visibility="gone"
+             >
+
+            <TextView android:id="@+id/other_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="10dip"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/manage_app"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"
+                    android:gravity="center"
+                    android:layout_margin="8dip"
+                    android:layout_weight="1"
+                    android:paddingTop="2dip"
+                    android:paddingBottom="5dip"
+                    android:textColor="#191919"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/wifi_download"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"
+                    android:gravity="center"
+                    android:layout_margin="8dip"
+                    android:layout_weight="1"
+                    android:paddingTop="2dip"
+                    android:paddingBottom="5dip"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="5dip"
+                android:gravity="right" >
+
+                <TextView
+                    android:id="@+id/next_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 下拉列表 -->
+
+        <LinearLayout
+            android:id="@+id/click_down"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/click_down_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 />
+        </LinearLayout>
+        <!-- 推荐应用 -->
+
+        <TextView
+            android:id="@+id/maybe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="5dip"
+            android:textColor="#191919"
+            android:textSize="16dip" />
+
+        <LinearLayout
+            android:id="@+id/maybe_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginBottom="10dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/recommend_lin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/recommend_logo1"
+                        android:layout_width="48dip"
+                        android:layout_height="48dip" />
+
+                    <TextView
+                        android:id="@+id/rec_install1"
+                        android:layout_width="44dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="30dip"
+                        android:gravity="center"
+                        android:textColor="#191919"
+                        android:textSize="8sp" />
+
+                    <ProgressBar
+                        android:id="@+id/recommend_pro1"
+                        android:layout_width="41dip"
+                        android:layout_height="11dip"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="32dip"
+                        android:max="100"
+                        android:secondaryProgress="100"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/status1"
+                        android:layout_width="37dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginTop="32dip"
+                        android:gravity="center"
+                        android:textColor="#ffffffff"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/recommend1"
+                    android:layout_width="60dip"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#191919"
+                    android:textSize="12dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recommend_lin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/recommend_logo2"
+                        android:layout_width="48dip"
+                        android:layout_height="48dip" />
+
+                    <TextView
+                        android:id="@+id/rec_install2"
+                        android:layout_width="44dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="30dip"
+                        android:gravity="center"
+                        android:textColor="#191919"
+                        android:textSize="8sp" />
+
+                    <ProgressBar
+                        android:id="@+id/recommend_pro2"
+                        android:layout_width="41dip"
+                        android:layout_height="11dip"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="32dip"
+                        android:max="100"
+                        android:secondaryProgress="100"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/status2"
+                        android:layout_width="37dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginTop="32dip"
+                        android:gravity="center"
+                        android:textColor="#ffffffff"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/recommend2"
+                    android:layout_width="60dip"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#191919"
+                    android:textSize="12dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recommend_lin3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/recommend_logo3"
+                        android:layout_width="48dip"
+                        android:layout_height="48dip" />
+
+                    <TextView
+                        android:id="@+id/rec_install3"
+						android:layout_width="44dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="30dip"
+                        android:gravity="center"
+                        android:textColor="#191919"
+                        android:textSize="8sp" />
+
+                    <ProgressBar
+                        android:id="@+id/recommend_pro3"
+                        android:layout_width="41dip"
+                        android:layout_height="11dip"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="32dip"
+                        android:max="100"
+                        android:secondaryProgress="100"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/status3"
+                        android:layout_width="37dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginTop="32dip"
+                        android:gravity="center"
+                        android:textColor="#ffffffff"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/recommend3"
+                    android:layout_width="60dip"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#191919"
+                    android:textSize="12dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recommend_lin4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/recommend_logo4"
+                        android:layout_width="48dip"
+                        android:layout_height="48dip" />
+
+                    <TextView
+                        android:id="@+id/rec_install4"
+                        android:layout_width="44dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="30dip"
+                        android:gravity="center"
+                        android:textColor="#191919"
+                        android:textSize="8sp" />
+
+                    <ProgressBar
+                        android:id="@+id/recommend_pro4"
+                        android:layout_width="41dip"
+                        android:layout_height="11dip"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginTop="32dip"
+                        android:max="100"
+                        android:secondaryProgress="100"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/status4"
+                        android:layout_width="37dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginTop="32dip"
+                        android:gravity="center"
+                        android:textColor="#ffffffff"
+                        android:textSize="8sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/recommend4"
+                    android:layout_width="60dip"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#191919"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+    </LinearLayout>
+
+</RelativeLayout>

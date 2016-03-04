@@ -4,12 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.igexin.sdk.PushManager;
 import com.lidong.demo.mvp.WeatherActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
-import com.lidong.demo.view.TestWebViewFragmentActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        // SDK初始化，第三方程序启动时，都要进行SDK初始化工作
+        Log.d("GetuiSdkDemo", "initializing sdk...");
+        PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
     @OnClick({R.id.button1, R.id.button2,R.id.button3})
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, WeatherActivity.class));
                 break;
             case R.id.button3:
-                startActivity(new Intent(MainActivity.this, TestWebViewFragmentActivity.class));
+                startActivity(new Intent(MainActivity.this, com.lidong.demo.gpush.GetuiSdkDemoActivity.class));
                 break;
         }
     }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:paddingBottom="13dip"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:paddingTop="5dip" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="@string/begin"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/beginText"
+        android:layout_width="360dip"
+        android:layout_height="wrap_content"
+        android:gravity="fill_horizontal"
+        android:inputType="textCapSentences"
+        android:selectAllOnFocus="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="@string/duration"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/durationText"
+        android:layout_width="360dip"
+        android:layout_height="wrap_content"
+        android:gravity="fill_horizontal"
+        android:inputType="textUri"
+        android:selectAllOnFocus="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
