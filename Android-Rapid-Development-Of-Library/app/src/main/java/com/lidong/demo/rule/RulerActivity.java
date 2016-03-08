@@ -28,7 +28,7 @@ public class RulerActivity extends AppCompatActivity {
     private TextView user_birth_value;
     private int beginYear;
 
-    private String birthyear = "1970";
+    private String birthyear = "1991";
     private long time = 0;
     private int screenWidth;
     private boolean isFirst = true;
