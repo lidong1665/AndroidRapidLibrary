@@ -4,3 +4,5 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 ![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/Screenshot_20160301-171616.png?raw=true)
 #Android中MVP+RxJava+Retrofit2.0的整合
 ![](http://img.blog.csdn.net/20160302165822191)
+#Android中刻度尺的实现方法
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/ruler.jpg)
