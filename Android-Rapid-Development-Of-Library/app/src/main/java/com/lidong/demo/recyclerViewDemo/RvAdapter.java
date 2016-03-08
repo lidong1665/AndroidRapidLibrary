@@ -13,7 +13,7 @@ import com.lidong.demo.R;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/3/8.
+ * Created by lidong on 2016-03-08
  */
 public class RvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mLayoutInflater;

@@ -40,10 +40,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * RecyclerView with loadmore
  *
- * @author Chanven
- * @date 2015-9-21
+ * @author lidong 2016-03-08
  */
 public class RecyclerViewActivity extends AppCompatActivity {
     PtrClassicFrameLayout ptrClassicFrameLayout;
