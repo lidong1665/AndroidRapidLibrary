@@ -183,8 +183,18 @@
         <activity
             android:name=".rule.RulerActivity"
             android:label="@string/title_activity_ruler"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".switchLayout.SwitchLayoutDemoActivity"
+            android:label="@string/title_activity_switch_layout_demo"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".recyclerViewDemo.RecyclerViewDemoActivity"
+            android:label="@string/title_activity_recycler_view_demo"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

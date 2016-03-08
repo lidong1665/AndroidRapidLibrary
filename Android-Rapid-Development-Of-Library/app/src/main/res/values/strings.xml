@@ -29,4 +29,6 @@
     <string name="unbind_alias">解除别名绑定</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_ruler">RulerActivity</string>
+    <string name="title_activity_switch_layout_demo">SwitchLayoutDemoActivity</string>
+    <string name="title_activity_recycler_view_demo">RecyclerViewDemoActivity</string>
 </resources>

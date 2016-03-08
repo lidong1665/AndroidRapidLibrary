@@ -31,4 +31,18 @@
         android:text="刻度尺实现"
         android:gravity="left|center_vertical"
         android:id="@+id/button4" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SwitchLayout实现Activity的切换动画"
+        android:gravity="left|center_vertical"
+        android:id="@+id/button5" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView的使用之下拉刷新和上拉加载"
+        android:gravity="left|center_vertical"
+        android:id="@+id/button6" />
+
+
 </LinearLayout>

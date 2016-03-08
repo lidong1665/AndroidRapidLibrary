@@ -9,16 +9,23 @@ import android.view.View;
 import android.widget.Button;
 
 import com.igexin.sdk.PushManager;
+import com.lidong.android_ibrary.switchlayout.BaseEffects;
+import com.lidong.android_ibrary.switchlayout.SwichLayoutInterFace;
+import com.lidong.android_ibrary.switchlayout.SwitchLayout;
 import com.lidong.demo.mvp.WeatherActivity;
+import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
 import com.lidong.demo.rule.RulerActivity;
+import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
-
+/**
+ * 主页面
+ */
+public class MainActivity extends AppCompatActivity implements SwichLayoutInterFace {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -30,18 +37,23 @@ public class MainActivity extends AppCompatActivity {
     Button button3;
     @Bind(R.id.button4)
     Button button4;
+    @Bind(R.id.button5)
+    Button button5;
+    @Bind(R.id.button6)
+    Button button6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        setEnterSwichLayout();
         // SDK初始化，第三方程序启动时，都要进行SDK初始化工作
         Log.d("GetuiSdkDemo", "initializing sdk...");
         PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
-    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4})
+    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4,R.id.button5,R.id.button6})
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button1:
@@ -56,7 +68,23 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button4:
                 startActivity(new Intent(MainActivity.this, RulerActivity.class));
                 break;
+            case R.id.button5:
+                startActivity(new Intent(MainActivity.this, SwitchLayoutDemoActivity.class));
+                break;
+            case R.id.button6:
+                startActivity(new Intent(MainActivity.this, RecyclerViewDemoActivity.class));
+                break;
         }
     }
 
+    @Override
+    public void setEnterSwichLayout() {
+        SwitchLayout.getSlideFromLeft(this, false,
+                BaseEffects.getReScrollEffect());
+    }
+
+    @Override
+    public void setExitSwichLayout() {
+
+    }
 }
