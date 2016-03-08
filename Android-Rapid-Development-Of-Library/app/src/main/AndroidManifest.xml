@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lidong.demo">
+    package="com.lidong.demo" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 个推SDK权限配置开始 -->
@@ -25,10 +25,12 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 自定义权限 -->
     <uses-permission android:name="getui.permission.GetuiService.com.lidong.demo" />
+
     <permission
         android:name="getui.permission.GetuiService.com.lidong.demo"
         android:protectionLevel="normal" >
     </permission>
+
     <!-- 个推SDK权限配置结束 -->
     <application
         android:name=".TApplication"
@@ -38,7 +40,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.lidong.demo.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -48,24 +50,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lidong.demo.mvp.WeatherActivity"
+            android:name=".mvp.WeatherActivity"
             android:label="@string/title_activity_weather"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name="com.lidong.demo.view.CircleProgressViewActivity"
+            android:name=".view.CircleProgressViewActivity"
             android:label="@string/title_activity_circle_progress_view"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name="com.lidong.demo.view.TestWebViewFragmentActivity"
+            android:name=".view.TestWebViewFragmentActivity"
             android:label="@string/title_activity_test_web_view_fragment"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name="com.lidong.demo.gpush.GetuiSdkDemoActivity"
+            android:name=".gpush.GetuiSdkDemoActivity"
             android:label="@string/title_activity_test_web_view_fragment"
-            android:theme="@style/AppTheme.NoActionBar"  >
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
 
         <!-- 个推SDK配置开始 -->
@@ -81,7 +83,7 @@
             android:value="n7Qd3Z0wjP94vzENSQ9Lb5" />
         <!-- 配置第三方Receiver -->
         <receiver
-            android:name="com.lidong.demo.gpush.PushDemoReceiver"
+            android:name=".gpush.PushDemoReceiver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
@@ -117,6 +119,7 @@
                 <action android:name="com.igexin.sdk.action.pushmanager" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name="com.igexin.sdk.PushActivity"
             android:excludeFromRecents="true"
@@ -124,29 +127,31 @@
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name="com.igexin.sdk.GActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.igexin.download.DownloadService"
             android:process=":pushservice" />
+
         <receiver android:name="com.igexin.download.DownloadReceiver" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
         <provider
             android:name="com.igexin.download.DownloadProvider"
-            android:exported="true"
             android:authorities="downloads.com.lidong.demo"
+            android:exported="true"
             android:process=":pushservice"
-            tools:replace="android:authorities"/>
+            tools:replace="android:authorities" />
+
         <activity
             android:name="com.igexin.getuiext.activity.GetuiExtActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
@@ -155,6 +160,7 @@
             android:process=":pushservice"
             android:taskAffinity="android.task.myServicetask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <receiver
             android:name="com.igexin.getuiext.service.PayloadReceiver"
             android:exported="false" >
@@ -163,11 +169,23 @@
                 <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
             </intent-filter>
         </receiver>
+
         <service
             android:name="com.igexin.getuiext.service.GetuiExtService"
             android:process=":pushservice" />
         <!-- 个推SDK配置结束 -->
 
+        <activity
+            android:name=".gpush.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".rule.RulerActivity"
+            android:label="@string/title_activity_ruler"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

@@ -27,4 +27,6 @@
     <string name="send_msg">发送消息</string>
     <string name="bind_alias">绑定别名</string>
     <string name="unbind_alias">解除别名绑定</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_ruler">RulerActivity</string>
 </resources>

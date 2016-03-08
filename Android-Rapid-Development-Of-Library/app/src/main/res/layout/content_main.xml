@@ -25,4 +25,10 @@
         android:text="集成个推实现仿照微信登录"
         android:gravity="left|center_vertical"
         android:id="@+id/button3" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="刻度尺实现"
+        android:gravity="left|center_vertical"
+        android:id="@+id/button4" />
 </LinearLayout>

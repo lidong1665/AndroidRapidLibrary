@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.igexin.sdk.PushManager;
 import com.lidong.demo.mvp.WeatherActivity;
+import com.lidong.demo.rule.RulerActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
 
 import butterknife.Bind;
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button button2;
     @Bind(R.id.button3)
     Button button3;
-
+    @Bind(R.id.button4)
+    Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
-    @OnClick({R.id.button1, R.id.button2,R.id.button3})
+    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4})
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button1:
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button3:
                 startActivity(new Intent(MainActivity.this, com.lidong.demo.gpush.GetuiSdkDemoActivity.class));
+                break;
+            case R.id.button4:
+                startActivity(new Intent(MainActivity.this, RulerActivity.class));
                 break;
         }
     }
