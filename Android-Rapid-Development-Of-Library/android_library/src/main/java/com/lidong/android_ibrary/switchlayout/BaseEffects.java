@@ -11,9 +11,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 
 /**
- * QQ 85204173
- * 
- * @author Tan Dong 2014.12.28
  */
 public class BaseEffects {
 	public static Interpolator acceInter = new AccelerateInterpolator();

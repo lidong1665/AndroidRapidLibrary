@@ -12,12 +12,10 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.Interpolator;
 
-/**
- * QQ 85204173
- * 
- * @author Tan Dong 2014.12.28
- */
 
+/**
+ * SwitchLayout
+ */
 public abstract class SwitchLayout {
 
 	private static Activity activity;

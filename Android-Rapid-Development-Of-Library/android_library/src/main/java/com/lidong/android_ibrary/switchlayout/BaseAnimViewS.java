@@ -9,9 +9,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 /**
- * QQ 85204173
- * 
- * @author Tan Dong 2014.12.28
  */
 public class BaseAnimViewS {
 	public static long animDuration = 600;

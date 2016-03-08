@@ -1,4 +1,4 @@
-package com.lidong.demo.demo.view.fragment;
+package com.lidong.demo.view.fragment;
 
 import android.app.Activity;
 import android.net.Uri;
