@@ -8,11 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.chanven.lib.cptr.PtrClassicFrameLayout;
-import com.chanven.lib.cptr.PtrDefaultHandler;
-import com.chanven.lib.cptr.PtrFrameLayout;
-import com.chanven.lib.cptr.loadmore.OnLoadMoreListener;
-import com.chanven.lib.cptr.recyclerview.RecyclerAdapterWithHF;
+import com.lidong.android_ibrary.PullToRefresh.PtrClassicFrameLayout;
+import com.lidong.android_ibrary.PullToRefresh.PtrDefaultHandler;
+import com.lidong.android_ibrary.PullToRefresh.PtrFrameLayout;
+import com.lidong.android_ibrary.PullToRefresh.loadmore.OnLoadMoreListener;
+import com.lidong.android_ibrary.PullToRefresh.recyclerview.RecyclerAdapterWithHF;
 import com.lidong.demo.R;
 
 import java.util.ArrayList;

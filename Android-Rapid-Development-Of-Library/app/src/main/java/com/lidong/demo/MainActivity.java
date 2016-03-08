@@ -13,7 +13,7 @@ import com.lidong.android_ibrary.switchlayout.BaseEffects;
 import com.lidong.android_ibrary.switchlayout.SwichLayoutInterFace;
 import com.lidong.android_ibrary.switchlayout.SwitchLayout;
 import com.lidong.demo.mvp.WeatherActivity;
-import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
+import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerActivity;
 import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 startActivity(new Intent(MainActivity.this, SwitchLayoutDemoActivity.class));
                 break;
             case R.id.button6:
-                startActivity(new Intent(MainActivity.this, RecyclerViewDemoActivity.class));
+                startActivity(new Intent(MainActivity.this, SwipeListViewActivity.class));
                 break;
         }
     }

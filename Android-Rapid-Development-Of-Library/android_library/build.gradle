@@ -29,6 +29,6 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile files('libs/butterknife-7.0.1.jar')
     compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.chanven.lib:cptr:1.0.0'
 
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 }
