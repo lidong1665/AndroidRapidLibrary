@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="195dp" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="210dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/author_layout"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:maxLines="2"
+                android:text="3月4日"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/author_layout"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/tv_date"
+                android:maxLines="2"
+                android:text=""
+                 android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/author_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="20dp" >
+
+                <TextView
+                    android:id="@+id/tv_pre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="文章选题来自"
+                    android:textColor="@color/white"
+                     android:visibility="gone"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_topic_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_pre"
+                    android:text="阿宅的"
+                     android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_topic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@+id/tv_pre"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:gravity="center" >
+
+            <View
+                android:id="@+id/v_dot0"
+                style="@style/dot_style"
+                android:background="@drawable/dot_focused"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/v_dot1"
+                style="@style/dot_style" 
+                android:visibility="invisible"/>
+
+            <View
+                android:id="@+id/v_dot2"
+                style="@style/dot_style" 
+                android:visibility="invisible"/>
+
+            <View
+                android:id="@+id/v_dot3"
+                style="@style/dot_style" 
+                android:visibility="invisible"/>
+
+            <View
+                android:id="@+id/v_dot4"
+                style="@style/dot_style"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/v_dot5"
+                style="@style/dot_style"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/v_dot6"
+                style="@style/dot_style"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/v_dot7"
+                style="@style/dot_style"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/v_dot8"
+                style="@style/dot_style"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -31,4 +31,5 @@
     <string name="title_activity_ruler">RulerActivity</string>
     <string name="title_activity_switch_layout_demo">SwitchLayoutDemoActivity</string>
     <string name="title_activity_recycler_view_demo">RecyclerViewDemoActivity</string>
+    <string name="title_activity_shuffling_pager">ShufflingPagerActivity</string>
 </resources>

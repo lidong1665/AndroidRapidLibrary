@@ -198,7 +198,12 @@
         </activity>
         <activity
             android:name=".recyclerViewDemo.SwipeListViewActivity"
-            android:label="@string/title_activity_recycler_view_demo">
+            android:label="@string/title_activity_recycler_view_demo" >
+        </activity>
+        <activity
+            android:name=".shuffling_pages.ShufflingPagerActivity"
+            android:label="@string/title_activity_shuffling_pager"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

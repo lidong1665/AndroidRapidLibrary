@@ -43,6 +43,11 @@
         android:text="RecyclerView的使用之下拉刷新和上拉加载"
         android:gravity="left|center_vertical"
         android:id="@+id/button6" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="轮播页的实现"
+        android:gravity="left|center_vertical"
+        android:id="@+id/button7" />
 
 </LinearLayout>
