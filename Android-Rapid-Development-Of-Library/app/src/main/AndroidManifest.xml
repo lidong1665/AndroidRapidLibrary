@@ -205,6 +205,11 @@
             android:label="@string/title_activity_shuffling_pager"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".tablayout.TestTabLayoutActivity"
+            android:label="@string/title_activity_test_tab_layout"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

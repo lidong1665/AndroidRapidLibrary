@@ -17,6 +17,7 @@ import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerActivity;
 import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
 import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
+import com.lidong.demo.tablayout.TestTabLayoutActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
 
 import butterknife.Bind;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     Button button6;
     @Bind(R.id.button7)
     Button button7;
+    @Bind(R.id.button8)
+    Button button8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
         PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
-    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4,R.id.button5,R.id.button6,R.id.button7})
+    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4,R.id.button5,R.id.button6,R.id.button7,R.id.button8})
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button1:
@@ -77,8 +80,12 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
             case R.id.button6:
                 startActivity(new Intent(MainActivity.this, SwipeListViewActivity.class));
                 break;
+
             case R.id.button7:
                 startActivity(new Intent(MainActivity.this, ShufflingPagerActivity.class));
+                break;
+            case R.id.button8:
+                startActivity(new Intent(MainActivity.this, TestTabLayoutActivity.class));
                 break;
         }
     }
