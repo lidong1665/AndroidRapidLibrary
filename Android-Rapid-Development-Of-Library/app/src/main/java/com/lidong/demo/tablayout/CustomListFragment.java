@@ -18,9 +18,6 @@ import com.lidong.demo.R;
 public class CustomListFragment extends BaseFragment {
 
     private static final String FRAGMENT_INDEX = "fragment_index";
-    private final int FIRST_FRAGMENT = 0;
-    private final int SECOND_FRAGMENT = 1;
-    private final int THIRD_FRAGMENT = 2;
 
     private LinearLayout mFragmentView;
 
