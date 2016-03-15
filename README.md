@@ -10,3 +10,6 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 
 #Android中RecycleView的上拉刷新和上拉加载功
 ![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160308112547.jpg)
+
+#Android中轮播页的实现
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315105356.jpg)
