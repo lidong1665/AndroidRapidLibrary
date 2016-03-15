@@ -12,9 +12,11 @@ import com.igexin.sdk.PushManager;
 import com.lidong.android_ibrary.switchlayout.BaseEffects;
 import com.lidong.android_ibrary.switchlayout.SwichLayoutInterFace;
 import com.lidong.android_ibrary.switchlayout.SwitchLayout;
+import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.mvp.WeatherActivity;
 import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerActivity;
+import com.lidong.demo.segmentcontrol.SegmentControlActivity;
 import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
 import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
 import com.lidong.demo.tablayout.TestTabLayoutActivity;
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     Button button7;
     @Bind(R.id.button8)
     Button button8;
+    @Bind(R.id.button9)
+    Button button9;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +64,9 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
         PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
-    @OnClick({R.id.button1, R.id.button2,R.id.button3,R.id.button4,R.id.button5,R.id.button6,R.id.button7,R.id.button8})
+    @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8,R.id.button9})
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.button1:
                 startActivity(new Intent(MainActivity.this, CircleProgressViewActivity.class));
                 break;
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 startActivity(new Intent(MainActivity.this, WeatherActivity.class));
                 break;
             case R.id.button3:
-                startActivity(new Intent(MainActivity.this, com.lidong.demo.gpush.GetuiSdkDemoActivity.class));
+                startActivity(new Intent(MainActivity.this, GetuiSdkDemoActivity.class));
                 break;
             case R.id.button4:
                 startActivity(new Intent(MainActivity.this, RulerActivity.class));
@@ -86,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 break;
             case R.id.button8:
                 startActivity(new Intent(MainActivity.this, TestTabLayoutActivity.class));
+                break;
+            case R.id.button9:
+                startActivity(new Intent(MainActivity.this, SegmentControlActivity.class));
                 break;
         }
     }

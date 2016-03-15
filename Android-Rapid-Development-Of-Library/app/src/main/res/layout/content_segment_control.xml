@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_segment_control"
+    tools:context="com.lidong.demo.segmentcontrol.SegmentControlActivity"
+    android:gravity="center_horizontal">
+    <com.lidong.android_ibrary.segmentcontrol.SegmentControl
+        xmlns:segmentcontrol="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/segment_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="13sp"
+        segmentcontrol:texts="我的好友|同学|同事|老师"
+        segmentcontrol:colors="@color/green"
+        segmentcontrol:cornerRadius="5dp"
+        segmentcontrol:direction="horizon"
+        segmentcontrol:verticalGap="8dp"
+        segmentcontrol:horizonGap="8dp"
+        android:gravity="center_horizontal"
+        />
+</RelativeLayout>

@@ -210,6 +210,11 @@
             android:label="@string/title_activity_test_tab_layout"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".segmentcontrol.SegmentControlActivity"
+            android:label="@string/title_activity_segment_control"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

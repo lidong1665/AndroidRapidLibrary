@@ -17,6 +17,9 @@ import com.lidong.demo.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TabLayout的实现
+ */
 public class TestTabLayoutActivity extends AppCompatActivity {
 
     private TabLayout mTabLayout;
@@ -130,7 +133,6 @@ public class TestTabLayoutActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }

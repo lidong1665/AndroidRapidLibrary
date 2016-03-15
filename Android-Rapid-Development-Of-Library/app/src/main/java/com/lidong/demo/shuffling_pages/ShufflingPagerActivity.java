@@ -90,7 +90,6 @@ public class ShufflingPagerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         initAdData();
         startAd();
-
     }
 
     private void initAdData() {
