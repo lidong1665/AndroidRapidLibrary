@@ -3,8 +3,8 @@ package com.lidong.demo.mvp.api;
 
 import com.lidong.demo.mvp.bean.WeatherData;
 
-import retrofit.http.GET;
-import retrofit.http.Query;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
