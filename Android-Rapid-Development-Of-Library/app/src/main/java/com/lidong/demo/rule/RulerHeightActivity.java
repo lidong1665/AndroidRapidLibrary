@@ -14,27 +14,22 @@ import android.widget.TextView;
 
 import com.lidong.demo.R;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-/**
- * 刻度尺的实现
- */
-public class RulerActivity extends AppCompatActivity {
+public class RulerHeightActivity extends AppCompatActivity {
 
     private HorizontalScrollView ruler;
-    private LinearLayout rulerlayout, all_layout;
-    private TextView user_birth_value;
+    private LinearLayout rulerlayout;
+    private TextView user_height_value;
     /**
-     * 开始年份
+     * 起点身高
      */
-    private int beginYear;
-
-    private String birthyear = "1991";
-    private long time = 0;
+    private int beginHeight = 0;
+    /**
+     * 屏幕宽度（尺子的长度）
+     */
     private int screenWidth;
-
+    /**
+     * 标记
+     */
     private boolean isFirst = true;
 
     @Override
@@ -43,8 +38,11 @@ public class RulerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ruler);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        user_birth_value = (TextView) findViewById(R.id.user_birth_value);
-        user_birth_value.setText("1970");
+        user_height_value = (TextView) findViewById(R.id.user_birth_value);
+        /**
+         * 设置默认身高
+         */
+        user_height_value.setText("170");
         ruler = (HorizontalScrollView) findViewById(R.id.birthruler);
         rulerlayout = (LinearLayout) findViewById(R.id.ruler_layout);
         /**
@@ -55,7 +53,7 @@ public class RulerActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int action = event.getAction();
-                user_birth_value.setText(String.valueOf(beginYear
+                user_height_value.setText(String.valueOf(beginHeight
                         + (int) Math.ceil((ruler.getScrollX()) / 20)));
                 switch (action) {
                     case MotionEvent.ACTION_DOWN:
@@ -65,17 +63,8 @@ public class RulerActivity extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                user_birth_value.setText(String.valueOf(beginYear
+                                user_height_value.setText(String.valueOf(beginHeight
                                         + (int) Math.ceil((ruler.getScrollX()) / 20)));
-                                birthyear = String.valueOf((int) (beginYear + Math
-                                        .ceil((ruler.getScrollX()) / 20)));
-                                try {
-                                    time = (new SimpleDateFormat("yyyy")
-                                            .parse(String.valueOf(birthyear)))
-                                            .getTime();
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         }, 1000);
                         break;
@@ -108,30 +97,28 @@ public class RulerActivity extends AppCompatActivity {
     }
 
     /**
-     * 设置默认值
+     * 设置默认值身高
      */
     private void scroll() {
-        ruler.smoothScrollTo((1970 - beginYear) * 20, 0);
+        ruler.smoothScrollTo((170 - beginHeight) * 20, 0);
     }
 
-    @SuppressWarnings("deprecation")
+    /**
+     * 构造尺子
+     */
     private void constructRuler() {
-        int year = new Date().getYear();
-        if (year < 2015)
-            year = 2010;
-        beginYear = year / 10 * 10 - 150;
         View leftview = (View) LayoutInflater.from(this).inflate(
                 R.layout.blankhrulerunit, null);
         leftview.setLayoutParams(new ViewGroup.LayoutParams(screenWidth / 2,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         rulerlayout.addView(leftview);
-        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < 22; i++) {
             View view = (View) LayoutInflater.from(this).inflate(
                     R.layout.hrulerunit, null);
             view.setLayoutParams(new ViewGroup.LayoutParams(200,
                     ViewGroup.LayoutParams.MATCH_PARENT));
             TextView tv = (TextView) view.findViewById(R.id.hrulerunit);
-            tv.setText(String.valueOf(beginYear + i * 10));
+            tv.setText(String.valueOf(beginHeight + i * 10));
             rulerlayout.addView(view);
         }
         View rightview = (View) LayoutInflater.from(this).inflate(

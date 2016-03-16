@@ -215,6 +215,11 @@
             android:label="@string/title_activity_segment_control"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".rule.RulerHeightActivity"
+            android:label="@string/title_activity_ruler_height"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

@@ -15,7 +15,7 @@ import com.lidong.android_ibrary.switchlayout.SwitchLayout;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.mvp.WeatherActivity;
 import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
-import com.lidong.demo.rule.RulerActivity;
+import com.lidong.demo.rule.RulerHeightActivity;
 import com.lidong.demo.segmentcontrol.SegmentControlActivity;
 import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
 import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 startActivity(new Intent(MainActivity.this, GetuiSdkDemoActivity.class));
                 break;
             case R.id.button4:
-                startActivity(new Intent(MainActivity.this, RulerActivity.class));
+                startActivity(new Intent(MainActivity.this, RulerHeightActivity.class));
                 break;
             case R.id.button5:
                 startActivity(new Intent(MainActivity.this, SwitchLayoutDemoActivity.class));

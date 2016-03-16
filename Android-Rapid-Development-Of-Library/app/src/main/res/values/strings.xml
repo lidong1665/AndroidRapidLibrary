@@ -34,4 +34,5 @@
     <string name="title_activity_shuffling_pager">ShufflingPagerActivity</string>
     <string name="title_activity_test_tab_layout">TestTabLayoutActivity</string>
     <string name="title_activity_segment_control">SegmentControlActivity</string>
+    <string name="title_activity_ruler_height">RulerHeightActivity</string>
 </resources>

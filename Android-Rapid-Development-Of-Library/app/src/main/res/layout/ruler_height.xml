@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@mipmap/height_ruler_size" />
+
+    <TextView
+        android:id="@+id/hrulerunit"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:textColor="@color/red"
+        android:textSize="14sp" />
+
+</LinearLayout>
