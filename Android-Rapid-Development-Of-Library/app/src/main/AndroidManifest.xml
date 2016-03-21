@@ -220,6 +220,21 @@
             android:label="@string/title_activity_ruler_height"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".eventbus.EventBusDemo1Activity"
+            android:label="@string/title_activity_event_bus_demo1"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".eventbus.EventBusDemo2Activity"
+            android:label="@string/title_activity_event_bus_demo2"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".greendao.GreenDaoActivity"
+            android:label="@string/title_activity_green_dao"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

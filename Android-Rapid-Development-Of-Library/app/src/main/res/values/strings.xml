@@ -35,4 +35,7 @@
     <string name="title_activity_test_tab_layout">TestTabLayoutActivity</string>
     <string name="title_activity_segment_control">SegmentControlActivity</string>
     <string name="title_activity_ruler_height">RulerHeightActivity</string>
+    <string name="title_activity_event_bus_demo1">EventBusDemo1Activity</string>
+    <string name="title_activity_event_bus_demo2">EventBusDemo2Activity</string>
+    <string name="title_activity_green_dao">GreenDaoActivity</string>
 </resources>

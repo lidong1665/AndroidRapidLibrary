@@ -102,7 +102,9 @@
     <orderEntry type="library" exported="" name="json_simple-1.1" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="greendao-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="rxjava-1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="eventbus-3.0.0" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-23.1.1" level="project" />

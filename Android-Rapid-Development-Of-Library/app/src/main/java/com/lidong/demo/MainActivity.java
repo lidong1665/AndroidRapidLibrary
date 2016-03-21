@@ -12,7 +12,9 @@ import com.igexin.sdk.PushManager;
 import com.lidong.android_ibrary.switchlayout.BaseEffects;
 import com.lidong.android_ibrary.switchlayout.SwichLayoutInterFace;
 import com.lidong.android_ibrary.switchlayout.SwitchLayout;
+import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
+import com.lidong.demo.greendao.GreenDaoActivity;
 import com.lidong.demo.mvp.WeatherActivity;
 import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerHeightActivity;
@@ -51,7 +53,10 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     Button button8;
     @Bind(R.id.button9)
     Button button9;
-
+    @Bind(R.id.button10)
+    Button button10;
+    @Bind(R.id.button11)
+    Button button11;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +69,8 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
         PushManager.getInstance().initialize(this.getApplicationContext());
     }
 
-    @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8,R.id.button9})
+    @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7,
+            R.id.button8,R.id.button9,R.id.button10,R.id.button11})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -94,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 break;
             case R.id.button9:
                 startActivity(new Intent(MainActivity.this, SegmentControlActivity.class));
+                break;
+            case R.id.button10:
+                startActivity(new Intent(MainActivity.this, EventBusDemo1Activity.class));
+            case R.id.button11:
+                startActivity(new Intent(MainActivity.this, GreenDaoActivity.class));
                 break;
         }
     }
