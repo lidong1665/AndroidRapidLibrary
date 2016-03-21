@@ -21,3 +21,8 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 ![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315134229.jpg)
 
 
+#Android中EventBus3.0的使用
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315134229.jpg)
+
+#Android中GreenDao的使用
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315134229.jpg)
