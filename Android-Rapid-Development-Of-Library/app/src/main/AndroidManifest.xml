@@ -235,6 +235,11 @@
             android:label="@string/title_activity_green_dao"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".navigation_view.BottomNavigationBarDemoActivity"
+            android:label="@string/title_activity_navigation_view_demo"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

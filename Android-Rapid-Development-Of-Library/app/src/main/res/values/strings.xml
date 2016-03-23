@@ -38,4 +38,8 @@
     <string name="title_activity_event_bus_demo1">EventBusDemo1Activity</string>
     <string name="title_activity_event_bus_demo2">EventBusDemo2Activity</string>
     <string name="title_activity_green_dao">GreenDaoActivity</string>
+    <string name="title_activity_navigation_view_demo">NavigationViewDemoActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

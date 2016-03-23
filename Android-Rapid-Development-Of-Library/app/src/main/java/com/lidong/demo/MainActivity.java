@@ -16,6 +16,7 @@ import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
 import com.lidong.demo.mvp.WeatherActivity;
+import com.lidong.demo.navigation_view.BottomNavigationBarDemoActivity;
 import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerHeightActivity;
 import com.lidong.demo.segmentcontrol.SegmentControlActivity;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     Button button10;
     @Bind(R.id.button11)
     Button button11;
+    @Bind(R.id.button12)
+    Button button12;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     }
 
     @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7,
-            R.id.button8,R.id.button9,R.id.button10,R.id.button11})
+            R.id.button8, R.id.button9, R.id.button10, R.id.button11,R.id.button12})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -103,8 +107,12 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 break;
             case R.id.button10:
                 startActivity(new Intent(MainActivity.this, EventBusDemo1Activity.class));
+                break;
             case R.id.button11:
                 startActivity(new Intent(MainActivity.this, GreenDaoActivity.class));
+                break;
+            case R.id.button12:
+                startActivity(new Intent(MainActivity.this, BottomNavigationBarDemoActivity.class));
                 break;
         }
     }
