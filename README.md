@@ -22,7 +22,10 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 
 
 #Android中EventBus3.0的使用
-![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ%E5%9B%BE%E7%89%8720160321163653.jpg)
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315134229.jpg)
 
 #Android中GreenDao的使用
-![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ%E5%9B%BE%E7%89%8720160321163704.jpg)
+![](https://github.com/lidong1665/AndroidRapidLibrary/blob/master/image/QQ图片20160315134229.jpg)
+
+#Android BottomNavigationBar的底部导航控制器使用
+![这里写图片描述](http://img.blog.csdn.net/20160323115759760)     ![这里写图片描述](http://img.blog.csdn.net/20160323115734260)
