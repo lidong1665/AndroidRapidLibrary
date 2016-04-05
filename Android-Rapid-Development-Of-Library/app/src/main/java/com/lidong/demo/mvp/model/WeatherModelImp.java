@@ -13,6 +13,8 @@ import rx.schedulers.Schedulers;
  */
 public class WeatherModelImp  implements WeatherModel {
 
+    ApiManager mApiManager;
+
     private WeatherOnListener mWeatherOnListener;
 
 
@@ -22,7 +24,7 @@ public class WeatherModelImp  implements WeatherModel {
 
     @Override
     public void getWeatherData(String format,String city) {
-                ApiManager.getWeatherData(format, city).subscribeOn(Schedulers.io())
+        new ApiManager().getWeatherData(format, city).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<WeatherData>() {
                     @Override

@@ -1,5 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+buildscript {
+    repositories {
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -21,12 +30,16 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            shrinkResources true
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     packagingOptions {
             exclude 'lib/armeabi/libgetuiext.so'
+            exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -48,6 +61,8 @@ dependencies {
     compile 'de.greenrobot:greendao:2.1.0'
     compile 'com.mani:thindownloadmanager:1.0.0'
     compile 'com.alipay.euler:andfix:0.3.1@aar'
+    provided 'javax.annotation:jsr250-api:1.0'
     compile 'com.google.dagger:dagger:2.0'
-    apt 'com.google.dagger:dagger-compiler:2.0'
+    compile 'com.google.dagger:dagger-compiler:2.0'
+
 }
