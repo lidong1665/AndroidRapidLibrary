@@ -22,4 +22,4 @@
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp"
     android:layout_weight="1"
-    android:gravity="center"/><!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_media_action.xml -->
+    android:gravity="center"/><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/notification_media_action.xml -->

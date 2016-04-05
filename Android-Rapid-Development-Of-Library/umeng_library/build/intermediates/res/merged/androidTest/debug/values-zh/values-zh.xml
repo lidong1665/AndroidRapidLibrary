@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/bundles/debug/res/values-zh/values-zh.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/bundles/debug/res/values-zh/values-zh.xml -->
     <eat-comment/>
     <string name="UMAppUpdate">应用更新</string>
     <string name="UMBreak_Network">未联网</string>

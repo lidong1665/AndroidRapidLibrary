@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\github factory\Android-Rapid-Development-Of-Library\Android-Rapid-Development-Of-Library\umeng_library\src\main\assets"/></dataSet><dataSet config="debug"><source path="E:\github factory\Android-Rapid-Development-Of-Library\Android-Rapid-Development-Of-Library\umeng_library\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\github factory\AndroidRapidLibrary\Android-Rapid-Development-Of-Library\umeng_library\src\main\assets"/></dataSet><dataSet config="debug"><source path="E:\github factory\AndroidRapidLibrary\Android-Rapid-Development-Of-Library\umeng_library\src\debug\assets"/></dataSet></merger>

@@ -31,4 +31,4 @@
                  android:drawableStart="?android:attr/listChoiceIndicatorSingle"
                  android:drawablePadding="20dp"
                  android:ellipsize="marquee" />
-<!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_singlechoice_material.xml -->
+<!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/select_dialog_singlechoice_material.xml -->

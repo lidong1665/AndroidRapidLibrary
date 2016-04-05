@@ -3,4 +3,4 @@
     <corners android:radius="10dp" />
     <stroke android:color="#bababa" android:width="1dp" />
     <gradient android:startColor="#e6e6e6" android:endColor="#e6e6e6" android:angle="90"/>
-</shape><!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/tb_munion_icon.xml -->
+</shape><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/tb_munion_icon.xml -->

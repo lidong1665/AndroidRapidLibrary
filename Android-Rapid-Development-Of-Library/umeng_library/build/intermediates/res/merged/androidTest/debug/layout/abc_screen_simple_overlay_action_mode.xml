@@ -36,4 +36,4 @@ enabled.
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-</android.support.v7.widget.FitWindowsFrameLayout><!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple_overlay_action_mode.xml -->
+</android.support.v7.widget.FitWindowsFrameLayout><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_screen_simple_overlay_action_mode.xml -->

@@ -28,4 +28,4 @@
           android:state_enabled="true"
           android:drawable="@drawable/umeng_update_btn_check_on_holo_light" />
 </selector>
-<!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/umeng_update_button_check_selector.xml --><!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/bundles/debug/res/drawable-xxhdpi/umeng_update_button_check_selector.xml -->
+<!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/umeng_update_button_check_selector.xml --><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/bundles/debug/res/drawable-xxhdpi/umeng_update_button_check_selector.xml -->

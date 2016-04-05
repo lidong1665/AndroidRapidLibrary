@@ -4,4 +4,4 @@
 	<gradient android:startColor="#4D892F" android:endColor="#8CC054"
 		android:type="linear" android:angle="90" />
 	<corners android:radius="8dp" />
-</shape><!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/umeng_common_gradient_green.xml -->
+</shape><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/drawable-xxhdpi/umeng_common_gradient_green.xml -->

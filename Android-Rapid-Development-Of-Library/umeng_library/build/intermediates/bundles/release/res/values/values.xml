@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/tb_munion_strings.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/tb_munion_strings.xml -->
     <eat-comment/>
     <color name="tb_munion_item_force">#e3e3e3</color>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/umeng_update_string.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/umeng_update_string.xml -->
     <eat-comment/>
     <string name="UMAppUpdate">App updating</string>
     <string name="UMBreak_Network">Please make sure you are connected to internet,update failed</string>
@@ -19,13 +19,13 @@
     <string name="UMUpdateNow">Update now</string>
     <string name="UMUpdateSize">Update size: </string>
     <string name="UMUpdateTitle">New version found</string>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/strings.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">UmengFamily</string>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/tb_munion_strings.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/tb_munion_strings.xml -->
     <eat-comment/>
     <string name="tb_munion_tip_download_prefix">正在下载:</string>
-    <!-- From: file:/E:/github%20factory/Android-Rapid-Development-Of-Library/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/umeng_common_strings.xml -->
+    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values/umeng_common_strings.xml -->
     <eat-comment/>
     <string name="umeng_common_action_cancel">Cancel</string>
     <string name="umeng_common_action_continue">Continue</string>

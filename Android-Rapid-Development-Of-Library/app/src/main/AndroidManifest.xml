@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lidong.demo" >
+    package="com.lidong.demo"
+    android:versionCode="100">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 个推SDK权限配置开始 -->
@@ -240,6 +241,14 @@
             android:label="@string/title_activity_navigation_view_demo"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56d8d98ae0f55ad903001919" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Wandoujia" />
     </application>
 
 </manifest>
