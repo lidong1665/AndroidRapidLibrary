@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.igexin.sdk.PushConsts;
 import com.igexin.sdk.PushManager;
-import com.lidong.demo.MainActivity;
 
 public class PushDemoReceiver extends BroadcastReceiver {
 
@@ -43,7 +42,6 @@ public class PushDemoReceiver extends BroadcastReceiver {
                     String data = new String(payload);
 
                     Log.d("GetuiSdkDemo", "receiver payload : " + data);
-                    processCustomMessage(context,data);
 
                     payloadData.append(data);
                     payloadData.append("\n");
@@ -84,16 +82,5 @@ public class PushDemoReceiver extends BroadcastReceiver {
             default:
                 break;
         }
-    }
-
-    /**
-     * 发送通知去检查下载跟新bug
-     * @param context
-     * @param message
-     */
-    private void processCustomMessage(Context context, String message) {
-        Intent msgIntent = new Intent(MainActivity.MESSAGE_RECEIVED_ACTION);
-        msgIntent.putExtra(MainActivity.KEY_MESSAGE, message);
-        context.sendBroadcast(msgIntent);
     }
 }
