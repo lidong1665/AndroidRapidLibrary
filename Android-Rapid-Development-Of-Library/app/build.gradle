@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.neenbedankt.android-apt'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -48,4 +48,6 @@ dependencies {
     compile 'de.greenrobot:greendao:2.1.0'
     compile 'com.mani:thindownloadmanager:1.0.0'
     compile 'com.alipay.euler:andfix:0.3.1@aar'
+    compile 'com.google.dagger:dagger:2.0'
+    apt 'com.google.dagger:dagger-compiler:2.0'
 }
