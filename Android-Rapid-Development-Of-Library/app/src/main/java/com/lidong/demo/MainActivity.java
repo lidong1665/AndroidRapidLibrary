@@ -26,7 +26,7 @@ import com.lidong.demo.AndFix.bean.util.WeakHandler;
 import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
-import com.lidong.demo.mvp.WeatherActivity;
+import com.lidong.demo.mvp_dagger2.WeatherActivity;
 import com.lidong.demo.navigation_view.BottomNavigationBarDemoActivity;
 import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
 import com.lidong.demo.rule.RulerHeightActivity;

@@ -1,20 +1,17 @@
-package com.lidong.demo.mvp.model;
+package com.lidong.demo.mvp_dagger2.model;
 
-
-import com.lidong.demo.mvp.api.ApiManager;
 import com.lidong.demo.mvp.bean.WeatherData;
+import com.lidong.demo.mvp_dagger2.api.ApiManager;
+
+import javax.inject.Inject;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-/**
- * Created by lidong on 2016/3/2.
- */
 public class WeatherModelImp  implements WeatherModel {
 
     private WeatherOnListener mWeatherOnListener;
-
 
     public WeatherModelImp(WeatherOnListener mWeatherOnListener) {
         this.mWeatherOnListener = mWeatherOnListener;
@@ -22,7 +19,7 @@ public class WeatherModelImp  implements WeatherModel {
 
     @Override
     public void getWeatherData(String format,String city) {
-        ApiManager.getWeatherData(format, city).subscribeOn(Schedulers.io())
+       ApiManager.getWeatherData(format, city).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<WeatherData>() {
                     @Override

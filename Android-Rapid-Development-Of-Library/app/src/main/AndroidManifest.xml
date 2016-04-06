@@ -56,6 +56,11 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
+            android:name=".mvp_dagger2.WeatherActivity"
+            android:label="@string/title_activity_weather"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name=".view.CircleProgressViewActivity"
             android:label="@string/title_activity_circle_progress_view"
             android:theme="@style/AppTheme.NoActionBar" >

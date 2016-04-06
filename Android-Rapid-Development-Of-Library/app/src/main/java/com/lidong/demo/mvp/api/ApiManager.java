@@ -1,12 +1,9 @@
 package com.lidong.demo.mvp.api;
 
-
 import com.lidong.demo.mvp.bean.WeatherData;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Module;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 /**
 * @classnmae : ApiManager
@@ -16,31 +13,25 @@ import rx.Observable;
 * @company : chni
 * @email : lidong@chni.com.cn
 **/
-@Module
 public class ApiManager {
 
-//    private static final String ENDPOINT = "http://v.juhe.cn";
-//
-//    private static final Retrofit sRetrofit = new Retrofit.Builder()
-//            .baseUrl(ENDPOINT)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) // 使用RxJava作为回调适配器
-//            .build();
-//
-//    private static final ApiManagerService apiManager = sRetrofit.create(ApiManagerService.class);
+    private static final String ENDPOINT = "http://v.juhe.cn";
 
-    @Inject ApiModule mApiModule;
+    private static final Retrofit sRetrofit = new Retrofit.Builder()
+            .baseUrl(ENDPOINT)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) // 使用RxJava作为回调适配器
+            .build();
 
-    @Singleton
-    public ApiManager(){}
+    private static final ApiManagerService apiManager = sRetrofit.create(ApiManagerService.class);
 
     /**
      * 获取天气数据
      * @param city
      * @return
      */
-    public    Observable<WeatherData> getWeatherData(String format, String city) {
-        Observable<WeatherData> ss = mApiModule.provideApiManagerService().getWeatherData(format, city, "ad1d20bebafe0668502c8eea5ddd0333");
+    public static  Observable<WeatherData> getWeatherData(String format, String city) {
+        Observable<WeatherData> ss = apiManager.getWeatherData(format, city, "ad1d20bebafe0668502c8eea5ddd0333");
         return  ss;
     }
 
