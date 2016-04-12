@@ -35,6 +35,7 @@ import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
 import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
 import com.lidong.demo.tablayout.TestTabLayoutActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
+import com.lidong.demo.view.ExtenpListViewActivity;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.onlineconfig.OnlineConfigAgent;
 import com.umeng.onlineconfig.OnlineConfigLog;
@@ -77,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
     Button button11;
     @Bind(R.id.button12)
     Button button12;
+    @Bind(R.id.button13)
+    Button button13;
     private String TAG =MainActivity.class.getSimpleName();
 
     @Override
@@ -131,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
 
 
     @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7,
-            R.id.button8, R.id.button9, R.id.button10, R.id.button11,R.id.button12})
+            R.id.button8, R.id.button9, R.id.button10, R.id.button11,R.id.button12,R.id.button13})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1:
@@ -170,6 +173,9 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
                 break;
             case R.id.button12:
                 startActivity(new Intent(MainActivity.this, BottomNavigationBarDemoActivity.class));
+                break;
+            case R.id.button13:
+                startActivity(new Intent(MainActivity.this, ExtenpListViewActivity.class));
                 break;
         }
     }

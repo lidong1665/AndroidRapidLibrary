@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.lidong.android_ibrary.CircleProgressView;
+import com.lidong.android_ibrary.view.CircleProgressView;
 import com.lidong.demo.R;
 
 public class CircleProgressViewActivity extends AppCompatActivity {

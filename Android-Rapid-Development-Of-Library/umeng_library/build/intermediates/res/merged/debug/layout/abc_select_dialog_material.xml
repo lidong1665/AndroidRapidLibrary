@@ -32,4 +32,4 @@
       android:paddingTop="@dimen/abc_dialog_list_padding_vertical_material"
       android:paddingBottom="@dimen/abc_dialog_list_padding_vertical_material"
       android:clipToPadding="false"
-      style="@style/Widget.AppCompat.ListView" /><!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/layout/abc_select_dialog_material.xml -->
+      style="@style/Widget.AppCompat.ListView" />

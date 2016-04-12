@@ -33,4 +33,28 @@
         <attr name="ptr_rotate_ani_time" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="CustomerView">
+        <!--标题-->
+        <attr name="titleText1" format="string" />
+        <attr name="titleTextColor1" format="color" />
+        <attr name="titleTextSize1" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomerImageView">
+        <!--文本内容-->
+        <attr name="titleText2" format="string" />
+        <!--文本颜色-->
+        <attr name="titleTextColor2" format="color" />
+        <!--文本大小-->
+        <attr name="titleTextSize2" format="dimension" />
+        <!--图片-->
+        <attr name="image2" format="reference" />
+        <!--图片样式-->
+        <attr name="imageScaleType2">
+            <enum name="fillXY" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+    </declare-styleable>
+    
+    
 </resources>

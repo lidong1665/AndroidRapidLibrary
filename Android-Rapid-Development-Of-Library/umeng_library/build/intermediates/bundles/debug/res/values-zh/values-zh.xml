@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values-zh/umeng_update_string.xml -->
-    <eat-comment/>
     <string name="UMAppUpdate">应用更新</string>
     <string name="UMBreak_Network">未联网</string>
     <string name="UMDialog_InstallAPK">最新版本已下载，是否安装？</string>
@@ -15,8 +13,6 @@
     <string name="UMUpdateNow">立即更新</string>
     <string name="UMUpdateSize">仅需要下载:</string>
     <string name="UMUpdateTitle">发现新版本</string>
-    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/src/main/res/values-zh/umeng_common_strings.xml -->
-    <eat-comment/>
     <string name="umeng_common_action_cancel">取消</string>
     <string name="umeng_common_action_continue">继续</string>
     <string name="umeng_common_action_info_exist">正在下载中.</string>

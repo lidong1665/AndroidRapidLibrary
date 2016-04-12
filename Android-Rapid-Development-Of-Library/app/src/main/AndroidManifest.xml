@@ -29,8 +29,7 @@
 
     <permission
         android:name="getui.permission.GetuiService.com.lidong.demo"
-        android:protectionLevel="normal" >
-    </permission>
+        android:protectionLevel="normal"></permission>
 
     <!-- 个推SDK权限配置结束 -->
     <application
@@ -39,11 +38,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,28 +52,23 @@
         <activity
             android:name=".mvp.WeatherActivity"
             android:label="@string/title_activity_weather"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".mvp_dagger2.WeatherActivity"
             android:label="@string/title_activity_weather"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".view.CircleProgressViewActivity"
             android:label="@string/title_activity_circle_progress_view"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".view.TestWebViewFragmentActivity"
             android:label="@string/title_activity_test_web_view_fragment"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".gpush.GetuiSdkDemoActivity"
             android:label="@string/title_activity_test_web_view_fragment"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <!-- 个推SDK配置开始 -->
         <!-- 配置的第三方参数属性 -->
@@ -90,7 +84,7 @@
         <!-- 配置第三方Receiver -->
         <receiver
             android:name=".gpush.PushDemoReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
             </intent-filter>
@@ -106,7 +100,7 @@
             android:exported="true"
             android:label="NotificationCenterUser" />
 
-        <receiver android:name="com.igexin.sdk.PushReceiver" >
+        <receiver android:name="com.igexin.sdk.PushReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -120,7 +114,7 @@
         </receiver>
         <receiver
             android:name="com.igexin.sdk.PushManagerReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.pushmanager" />
             </intent-filter>
@@ -145,7 +139,7 @@
             android:name="com.igexin.download.DownloadService"
             android:process=":pushservice" />
 
-        <receiver android:name="com.igexin.download.DownloadReceiver" >
+        <receiver android:name="com.igexin.download.DownloadReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
@@ -169,7 +163,7 @@
 
         <receiver
             android:name="com.igexin.getuiext.service.PayloadReceiver"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
                 <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
@@ -184,76 +178,64 @@
         <activity
             android:name=".gpush.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".rule.RulerActivity"
             android:label="@string/title_activity_ruler"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".switchLayout.SwitchLayoutDemoActivity"
             android:label="@string/title_activity_switch_layout_demo"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".recyclerViewDemo.RecyclerViewDemoActivity"
             android:label="@string/title_activity_recycler_view_demo"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".recyclerViewDemo.SwipeListViewActivity"
-            android:label="@string/title_activity_recycler_view_demo" >
-        </activity>
+            android:label="@string/title_activity_recycler_view_demo"></activity>
         <activity
             android:name=".shuffling_pages.ShufflingPagerActivity"
             android:label="@string/title_activity_shuffling_pager"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".tablayout.TestTabLayoutActivity"
             android:label="@string/title_activity_test_tab_layout"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".segmentcontrol.SegmentControlActivity"
             android:label="@string/title_activity_segment_control"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".rule.RulerHeightActivity"
             android:label="@string/title_activity_ruler_height"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".eventbus.EventBusDemo1Activity"
             android:label="@string/title_activity_event_bus_demo1"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".eventbus.EventBusDemo2Activity"
             android:label="@string/title_activity_event_bus_demo2"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".greendao.GreenDaoActivity"
             android:label="@string/title_activity_green_dao"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".navigation_view.BottomNavigationBarDemoActivity"
             android:label="@string/title_activity_navigation_view_demo"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="56d8d98ae0f55ad903001919" >
-        </meta-data>
+            android:value="56d8d98ae0f55ad903001919"></meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Wandoujia" />
+
+        <activity android:name=".view.ExtenpListViewActivity"></activity>
     </application>
 
 </manifest>

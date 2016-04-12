@@ -9,6 +9,14 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
 
+/**
+*@类名 : GsonUtils
+*@描述 : 
+*@时间 : 2016/4/12  14:25
+*@作者: 李东
+*@邮箱  : lidong@chni.com.cn
+*@company: chni
+*/
 public class GsonUtils {
 
 	private Gson mGson;

@@ -22,4 +22,3 @@
     <item android:id="@android:id/progress"
         android:drawable="@drawable/abc_btn_rating_star_on_mtrl_alpha" />
 </layer-list>
-<!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_ratingbar_full_material.xml -->

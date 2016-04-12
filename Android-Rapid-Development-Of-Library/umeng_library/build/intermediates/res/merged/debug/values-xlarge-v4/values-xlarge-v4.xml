@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/github%20factory/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/umeng_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/values-xlarge-v4/values-xlarge-v4.xml -->
-    <eat-comment/>
     <bool name="abc_action_bar_expanded_action_views_exclusive">false</bool>
     <item name="abc_dialog_fixed_height_major" type="dimen">60%</item>
     <item name="abc_dialog_fixed_height_minor" type="dimen">90%</item>
