@@ -87,7 +87,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android BottomNavigationBar的使用"
+            android:text="ExpandableListView的嵌套ListView实现"
             android:gravity="left|center_vertical"
             android:id="@+id/button13" />
     </LinearLayout>
