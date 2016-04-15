@@ -1,5 +1,7 @@
 package com.lidong.demo;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -7,14 +9,13 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.igexin.sdk.PushManager;
 import com.lidong.android_ibrary.switchlayout.BaseEffects;
 import com.lidong.android_ibrary.switchlayout.SwichLayoutInterFace;
@@ -23,19 +24,10 @@ import com.lidong.demo.AndFix.bean.PatchBean;
 import com.lidong.demo.AndFix.bean.util.GsonUtils;
 import com.lidong.demo.AndFix.bean.util.RepairBugUtil;
 import com.lidong.demo.AndFix.bean.util.WeakHandler;
-import com.lidong.demo.eventbus.EventBusDemo1Activity;
-import com.lidong.demo.gpush.GetuiSdkDemoActivity;
-import com.lidong.demo.greendao.GreenDaoActivity;
-import com.lidong.demo.mvp_dagger2.WeatherActivity;
-import com.lidong.demo.navigation_view.BottomNavigationBarDemoActivity;
-import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
-import com.lidong.demo.rule.RulerHeightActivity;
-import com.lidong.demo.segmentcontrol.SegmentControlActivity;
-import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
-import com.lidong.demo.switchLayout.SwitchLayoutDemoActivity;
-import com.lidong.demo.tablayout.TestTabLayoutActivity;
-import com.lidong.demo.view.CircleProgressViewActivity;
-import com.lidong.demo.view.ExtenpListViewActivity;
+import com.lidong.demo.navigation_view.BookFragment;
+import com.lidong.demo.navigation_view.FavoritesFragment;
+import com.lidong.demo.navigation_view.FindFragment;
+import com.lidong.demo.navigation_view.LocationFragment;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.onlineconfig.OnlineConfigAgent;
 import com.umeng.onlineconfig.OnlineConfigLog;
@@ -43,51 +35,29 @@ import com.umeng.onlineconfig.UmengOnlineConfigureListener;
 
 import org.json.JSONObject;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 主页面
  */
-public class MainActivity extends AppCompatActivity implements SwichLayoutInterFace {
+public class MainActivity extends BaseActivity implements SwichLayoutInterFace,BottomNavigationBar.OnTabSelectedListener {
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
-    @Bind(R.id.button1)
-    Button button1;
-    @Bind(R.id.button2)
-    Button button2;
-    @Bind(R.id.button3)
-    Button button3;
-    @Bind(R.id.button4)
-    Button button4;
-    @Bind(R.id.button5)
-    Button button5;
-    @Bind(R.id.button6)
-    Button button6;
-    @Bind(R.id.button7)
-    Button button7;
-    @Bind(R.id.button8)
-    Button button8;
-    @Bind(R.id.button9)
-    Button button9;
-    @Bind(R.id.button10)
-    Button button10;
-    @Bind(R.id.button11)
-    Button button11;
-    @Bind(R.id.button12)
-    Button button12;
-    @Bind(R.id.button13)
-    Button button13;
     private String TAG =MainActivity.class.getSimpleName();
+    private BottomNavigationBar bottomNavigationBar;
+    private int lastSelectedPosition = 0;
+    private LocationFragment mLocationFragment;
+    private FindFragment mFindFragment;
+    private FavoritesFragment mFavoritesFragment;
+    private BookFragment mBookFragment;
+    private Toolbar mToolbar;
+    private TextView tv_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_main);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
+        initData();
         registerMessageReceiver();
         setEnterSwichLayout();
         // SDK初始化，第三方程序启动时，都要进行SDK初始化工作
@@ -96,13 +66,47 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
         //初始化友盟在线参数
         initUmeng();
         getUmengParamAndFix();
-        test("ssss");
     }
 
-    private void test(String test) {
-        Log.d(TAG, "test() called with: " + "----");
-        Toast.makeText(MainActivity.this, test, Toast.LENGTH_SHORT).show();
+    private void initData() {
+        bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        bottomNavigationBar.setMode(BottomNavigationBar.MODE_CLASSIC);
+
+        bottomNavigationBar
+                .addItem(new BottomNavigationItem(R.mipmap.ic_location_on_white_24dp, "UI").setActiveColor(R.color.orange))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp, "网络").setActiveColor(R.color.blue))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_favorite_white_24dp, "进阶").setActiveColor(R.color.green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp, "综合").setActiveColor(R.color.blue))
+                .setFirstSelectedPosition(lastSelectedPosition )//设置默认选中
+                .initialise();
+
+        bottomNavigationBar.setTabSelectedListener(this);
+        setDefaultFragment();
     }
+
+    @Override
+    public void initToolBar(Toolbar toolbar) {
+        super.initToolBar(toolbar);
+        toolbar.setNavigationIcon(null);
+        tv_title = (TextView) toolbar.findViewById(R.id.tv_title);
+        tv_title.setText("UI");
+        mToolbar = toolbar;
+    }
+
+    private void setDefaultFragment() {
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        mLocationFragment = LocationFragment.newInstance("UI界面");
+        transaction.replace(R.id.tb, mLocationFragment);
+        transaction.commit();
+    }
+
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+
+    }
+
 
     private void getUmengParamAndFix() {
         String value = OnlineConfigAgent.getInstance().getConfigParams(this, "hiApk");
@@ -131,54 +135,6 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
             OnlineConfigLog.d("OnlineConfig", "json=" + json);
         }
     };
-
-
-    @OnClick({R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7,
-            R.id.button8, R.id.button9, R.id.button10, R.id.button11,R.id.button12,R.id.button13})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button1:
-                startActivity(new Intent(MainActivity.this, CircleProgressViewActivity.class));
-                break;
-            case R.id.button2:
-                startActivity(new Intent(MainActivity.this, WeatherActivity.class));
-                break;
-            case R.id.button3:
-                startActivity(new Intent(MainActivity.this, GetuiSdkDemoActivity.class));
-                break;
-            case R.id.button4:
-                startActivity(new Intent(MainActivity.this, RulerHeightActivity.class));
-                break;
-            case R.id.button5:
-                startActivity(new Intent(MainActivity.this, SwitchLayoutDemoActivity.class));
-                break;
-            case R.id.button6:
-                startActivity(new Intent(MainActivity.this, SwipeListViewActivity.class));
-                break;
-
-            case R.id.button7:
-                startActivity(new Intent(MainActivity.this, ShufflingPagerActivity.class));
-                break;
-            case R.id.button8:
-                startActivity(new Intent(MainActivity.this, TestTabLayoutActivity.class));
-                break;
-            case R.id.button9:
-                startActivity(new Intent(MainActivity.this, SegmentControlActivity.class));
-                break;
-            case R.id.button10:
-                startActivity(new Intent(MainActivity.this, EventBusDemo1Activity.class));
-                break;
-            case R.id.button11:
-                startActivity(new Intent(MainActivity.this, GreenDaoActivity.class));
-                break;
-            case R.id.button12:
-                startActivity(new Intent(MainActivity.this, BottomNavigationBarDemoActivity.class));
-                break;
-            case R.id.button13:
-                startActivity(new Intent(MainActivity.this, ExtenpListViewActivity.class));
-                break;
-        }
-    }
 
     @Override
     public void setEnterSwichLayout() {
@@ -241,6 +197,58 @@ public class MainActivity extends AppCompatActivity implements SwichLayoutInterF
         filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
         filter.addAction(MESSAGE_RECEIVED_ACTION);
         registerReceiver(mMessageReceiver, filter);
+    }
+
+    @Override
+    public void onTabSelected(int position) {
+        Log.d(TAG, "onTabSelected() called with: " + "position = [" + position + "]");
+        FragmentManager fm = this.getFragmentManager();
+        //开启事务
+        FragmentTransaction transaction = fm.beginTransaction();
+        switch (position) {
+            case 0:
+                if (mLocationFragment == null) {
+                    mLocationFragment = LocationFragment.newInstance("UI界面");
+                }
+                transaction.replace(R.id.tb, mLocationFragment);
+                tv_title.setText("UI界面");
+                break;
+            case 1:
+                if (mFindFragment == null) {
+                    mFindFragment = FindFragment.newInstance("网络");
+                }
+                transaction.replace(R.id.tb, mFindFragment);
+                tv_title.setText("网络");
+                break;
+            case 2:
+                if (mFavoritesFragment == null) {
+                    mFavoritesFragment = FavoritesFragment.newInstance("进阶");
+                }
+                transaction.replace(R.id.tb, mFavoritesFragment);
+                tv_title.setText("进阶");
+                break;
+            case 3:
+                if (mBookFragment == null) {
+                    mBookFragment = BookFragment.newInstance("综合");
+                }
+                transaction.replace(R.id.tb, mBookFragment);
+                tv_title.setText("综合");
+                break;
+            default:
+                break;
+        }
+        // 事务提交
+        transaction.commit();
+    }
+
+    @Override
+    public void onTabUnselected(int position) {
+
+    }
+
+    @Override
+    public void onTabReselected(int position) {
+
     }
 
     public class MessageReceiver extends BroadcastReceiver {

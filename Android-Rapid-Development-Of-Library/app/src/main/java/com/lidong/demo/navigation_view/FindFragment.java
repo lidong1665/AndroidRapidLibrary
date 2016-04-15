@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.lidong.demo.R;
 
 public class FindFragment extends Fragment {
-
 
     public static FindFragment newInstance(String param1) {
         FindFragment fragment = new FindFragment();
@@ -32,14 +30,7 @@ public class FindFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_location, container, false);
-        Bundle bundle = getArguments();
-        String agrs1 = bundle.getString("agrs1");
-        TextView tv = (TextView)view.findViewById(R.id.tv_location);
-        tv.setText(agrs1);
+        View view = inflater.inflate(R.layout.fragment_find, container, false);
         return view;
     }
-
-
-
 }

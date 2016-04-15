@@ -26,7 +26,14 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
+/**
+*@类名 : ExtenpListViewActivity
+*@描述 : 
+*@时间 : 2016/4/15  9:00
+*@作者: 李东
+*@邮箱  : lidong@chni.com.cn
+*@company: chni
+*/
 public class ExtenpListViewActivity extends AppCompatActivity {
 
     @Bind(R.id.elv_good_friend)

@@ -43,7 +43,7 @@ public class PushDemoReceiver extends BroadcastReceiver {
                     String data = new String(payload);
 
                     Log.d("GetuiSdkDemo", "receiver payload : " + data);
-                    processCustomMessage(context,data);
+//                    processCustomMessage(context,data);
 
                     payloadData.append(data);
                     payloadData.append("\n");

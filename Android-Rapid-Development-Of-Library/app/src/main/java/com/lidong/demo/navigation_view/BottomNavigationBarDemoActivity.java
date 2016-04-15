@@ -3,18 +3,19 @@ package com.lidong.demo.navigation_view;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.lidong.demo.AppComponent;
+import com.lidong.demo.BaseActivity;
 import com.lidong.demo.R;
 
 /**
  * BottomNavigationBar实现
  */
-public class BottomNavigationBarDemoActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
+public class BottomNavigationBarDemoActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     private BottomNavigationBar bottomNavigationBar;
     int lastSelectedPosition = 0;
@@ -23,25 +24,32 @@ public class BottomNavigationBarDemoActivity extends AppCompatActivity implement
     private FindFragment mFindFragment;
     private FavoritesFragment mFavoritesFragment;
     private BookFragment mBookFragment;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view_demo);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        bottomNavigationBar.setMode(BottomNavigationBar.MODE_CLASSIC);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.mipmap.ic_location_on_white_24dp, "位置").setActiveColor(R.color.orange))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp, "发现").setActiveColor(R.color.blue))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_favorite_white_24dp, "爱好").setActiveColor(R.color.green))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp, "图书").setActiveColor(R.color.blue))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_location_on_white_24dp, "UI").setActiveColor(R.color.orange))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp, "网络").setActiveColor(R.color.blue))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_favorite_white_24dp, "进阶").setActiveColor(R.color.green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp, "综合").setActiveColor(R.color.blue))
                 .setFirstSelectedPosition(lastSelectedPosition )//设置默认选中
                 .initialise();
 
         bottomNavigationBar.setTabSelectedListener(this);
         setDefaultFragment();
+    }
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+
     }
 
     /**
@@ -50,7 +58,7 @@ public class BottomNavigationBarDemoActivity extends AppCompatActivity implement
     private void setDefaultFragment() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        mLocationFragment = LocationFragment.newInstance("位置");
+        mLocationFragment = LocationFragment.newInstance("UI");
         transaction.replace(R.id.tb, mLocationFragment);
         transaction.commit();
     }
@@ -64,25 +72,25 @@ public class BottomNavigationBarDemoActivity extends AppCompatActivity implement
         switch (position) {
             case 0:
                 if (mLocationFragment == null) {
-                    mLocationFragment = LocationFragment.newInstance("位置");
+                    mLocationFragment = LocationFragment.newInstance("UI");
                 }
                 transaction.replace(R.id.tb, mLocationFragment);
                 break;
             case 1:
                 if (mFindFragment == null) {
-                    mFindFragment = FindFragment.newInstance("发现");
+                    mFindFragment = FindFragment.newInstance("网络");
                 }
                 transaction.replace(R.id.tb, mFindFragment);
                 break;
             case 2:
                 if (mFavoritesFragment == null) {
-                    mFavoritesFragment = FavoritesFragment.newInstance("爱好");
+                    mFavoritesFragment = FavoritesFragment.newInstance("进阶");
                 }
                 transaction.replace(R.id.tb, mFavoritesFragment);
                 break;
             case 3:
                 if (mBookFragment == null) {
-                    mBookFragment = BookFragment.newInstance("图书");
+                    mBookFragment = BookFragment.newInstance("综合");
                 }
                 transaction.replace(R.id.tb, mBookFragment);
                 break;

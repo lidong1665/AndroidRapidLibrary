@@ -12,6 +12,13 @@
         android:layout_width="match_parent"
          android:layout_height="match_parent"
         android:orientation="vertical" />
+    <!--<View-->
+        <!--android:layout_above="@id/tb"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:id="@+id/line"-->
+        <!--android:background="@color/blue">-->
+    <!--</View>-->
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"

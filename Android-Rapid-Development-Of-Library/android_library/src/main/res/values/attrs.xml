@@ -55,6 +55,19 @@
             <enum name="center" value="1" />
         </attr>
     </declare-styleable>
-    
+
+   <!--TagFlowLayout-->
+    <declare-styleable name="TagFlowLayout">
+        <!--自动选中-->
+        <attr name="auto_select_effect" format="boolean"></attr>
+        <!--最大选中数量-->
+        <attr name="max_select" format="integer"></attr>
+        <!--布局方式-->
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
     
 </resources>

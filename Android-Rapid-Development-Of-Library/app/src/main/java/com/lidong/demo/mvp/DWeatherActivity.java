@@ -16,7 +16,7 @@ import com.lidong.demo.mvp.view.WeatherView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class WeatherActivity extends AppCompatActivity implements WeatherView {
+public class DWeatherActivity extends AppCompatActivity implements WeatherView {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;

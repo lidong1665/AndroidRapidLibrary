@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ld="http://schemas.android.com/apk/res-auto/com.lidong.demo"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.lidong.demo.view.TagFlowLayoutActivity"
+    tools:showIn="@layout/activity_tag_flow_layout">
+
+    <com.lidong.android_ibrary.tagflowlayout.TagFlowLayout
+        android:id="@+id/id_flowlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        ld:max_select="1"
+        >
+    </com.lidong.android_ibrary.tagflowlayout.TagFlowLayout>
+
+
+
+</RelativeLayout>

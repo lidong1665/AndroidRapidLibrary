@@ -31,6 +31,6 @@ dependencies {
     compile files('libs/butterknife-7.0.1.jar')
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.ashokvarma.android:bottom-navigation-bar:0.9.5'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.0.0'
     compile files('libs/umeng-onlineconfig_v1.0.0.jar')
 }
