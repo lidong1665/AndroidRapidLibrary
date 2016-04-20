@@ -1,10 +1,9 @@
 package com.lidong.demo.mvp_dagger2;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
 import com.lidong.demo.AppComponent;
@@ -74,6 +73,7 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
     @Override
     public void hideProgress() {
         LoadingUIHelper.hideDialogForLoading();
+        Toast.makeText(this,"你的免费数据已经用完",Toast.LENGTH_SHORT).show();
     }
 
     @Override

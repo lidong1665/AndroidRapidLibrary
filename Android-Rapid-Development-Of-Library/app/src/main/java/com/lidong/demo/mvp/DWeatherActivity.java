@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
 import com.lidong.demo.R;
@@ -86,6 +87,7 @@ public class DWeatherActivity extends AppCompatActivity implements WeatherView {
     @Override
     public void hideProgress() {
         LoadingUIHelper.hideDialogForLoading();
+        Toast.makeText(this,"你的免费数据已经用完",Toast.LENGTH_SHORT).show();
     }
 
     @Override

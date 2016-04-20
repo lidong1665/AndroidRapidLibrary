@@ -99,25 +99,6 @@ public class SwipeListViewActivity extends AppCompatActivity{
 
     }
 
-    SwipeRefreshHelper.OnSwipeRefreshListener mOnSwipeRefreshListener = new SwipeRefreshHelper.OnSwipeRefreshListener() {
-        @Override
-        public void onfresh() {
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mDatas.clear();
-                    page = 0;
-                    for (int i = 0; i < 17; i++) {
-                        mDatas.add(new String("  SwipeListView item  -" + i));
-                    }
-                    mAdapter.notifyDataSetChanged();
-                    mSwipeRefreshHelper.refreshComplete();
-                    mSwipeRefreshHelper.setLoadMoreEnable(true);
-                }
-            }, 1000);
-        }
-    };
-
 
     public class ListViewAdapter extends BaseAdapter {
         private List<String> datas;

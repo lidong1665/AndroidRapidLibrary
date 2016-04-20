@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements SwichLayoutInterFace,B
     @Override
     public void initToolBar(Toolbar toolbar) {
         super.initToolBar(toolbar);
-//        toolbar.setNavigationIcon(null);
+        toolbar.setNavigationIcon(null);
         tv_title = (TextView) toolbar.findViewById(R.id.tv_title);
         tv_title.setText("UI");
         mToolbar = toolbar;

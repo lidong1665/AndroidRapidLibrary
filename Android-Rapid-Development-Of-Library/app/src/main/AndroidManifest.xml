@@ -39,8 +39,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity
-            android:name=".MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -233,12 +232,17 @@
             android:name="UMENG_CHANNEL"
             android:value="Wandoujia"/>
 
-        <activity android:name=".view.ExtenpListViewActivity"
-                  android:theme="@style/AppBaseTheme"/>
+        <activity
+            android:name=".view.ExtenpListViewActivity"
+            android:theme="@style/AppBaseTheme"/>
         <activity
             android:name=".view.TagFlowLayoutActivity"
             android:label="@string/title_activity_tag_flow_layout"
             android:theme="@style/AppBaseTheme">
+        </activity>
+        <activity android:name=".mvp.WeixinNewsActivity">
+        </activity>
+        <activity android:name=".mvp.WeiXinWebViewActivity">
         </activity>
     </application>
 

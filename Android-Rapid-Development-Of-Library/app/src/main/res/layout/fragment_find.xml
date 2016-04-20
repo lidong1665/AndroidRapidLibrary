@@ -7,12 +7,27 @@
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/btn_test"/>
-    <TextView
-        android:layout_width="wrap_content"
+        android:text="Retrofit2.0的Get请求"
+        android:gravity="left"
+        android:id="@+id/btn_get"/>
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_text111111"/>
+        android:text="Retrofit2.0的POST请求"
+        android:gravity="left"
+        android:id="@+id/btn_post"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit2.0的上传图片"
+        android:gravity="left"
+        android:id="@+id/btn_upload_file"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android 仿照微信发说说"
+        android:gravity="left"
+        android:id="@+id/btn_upload_file_topic"/>
 </LinearLayout>
