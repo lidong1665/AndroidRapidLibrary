@@ -44,11 +44,11 @@ public class TestTabLayoutActivity extends AppCompatActivity {
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
 
         mInflater = LayoutInflater.from(this);
-        view1 =CustomListFragment.newInstance(0);
-        view2 =CustomListFragment.newInstance(1);
-        view3 = CustomListFragment.newInstance(2);
-        view4 = CustomListFragment.newInstance(3);
-        view5 =CustomListFragment.newInstance(4);
+        view1 =CustomListFragment.newInstance(0,"https://github.com/lidong1665");
+        view2 =CustomListFragment.newInstance(1,"http://blog.csdn.net/u010046908");
+        view3 = CustomListFragment.newInstance(2,"https://github.com/lidong1665");
+        view4 = CustomListFragment.newInstance(3,"http://blog.csdn.net/u010046908");
+        view5 =CustomListFragment.newInstance(4,"https://github.com/lidong1665");
 
         mView1 = mInflater.inflate(R.layout.activity_main, null);
         mView2 = mInflater.inflate(R.layout.activity_main, null);

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
@@ -18,6 +19,7 @@ import com.lidong.demo.R;
 public class CustomListFragment extends BaseFragment {
 
     private static final String FRAGMENT_INDEX = "fragment_index";
+    private String url;
 
     private LinearLayout mFragmentView;
 
@@ -34,9 +36,10 @@ public class CustomListFragment extends BaseFragment {
      * @param index
      * @return
      */
-    public static CustomListFragment newInstance(int index) {
+    public static CustomListFragment newInstance(int index,String url1) {
         Bundle bundle = new Bundle();
         bundle.putInt(FRAGMENT_INDEX, index);
+        bundle.putString("URL", url1);
         CustomListFragment fragment = new CustomListFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -51,6 +54,7 @@ public class CustomListFragment extends BaseFragment {
             Bundle bundle = getArguments();
             if (bundle != null) {
                 mCurIndex = bundle.getInt(FRAGMENT_INDEX);
+                url = bundle.getString("URL");
             }
             isPrepared = true;
             lazyLoad();
@@ -84,7 +88,7 @@ public class CustomListFragment extends BaseFragment {
                 try {
 //                    Thread.sleep(2000);
                     //在这里添加调用接口获取数据的代码
-                    doSomething("https://github.com/lidong1665");
+                    doSomething(url);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -111,7 +115,14 @@ public class CustomListFragment extends BaseFragment {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-               wb.loadUrl(url);
+                wb.loadUrl(url);
+                wb.setWebViewClient(new WebViewClient() {
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        //  重写此方法表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边
+                        view.loadUrl(url);
+                        return true;
+                    }
+                });
             }
         });
     }

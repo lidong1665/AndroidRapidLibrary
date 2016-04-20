@@ -40,8 +40,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppBaseTheme">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -202,10 +201,9 @@
         <activity
             android:name=".tablayout.TestTabLayoutActivity"
             android:label="@string/title_activity_test_tab_layout"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppBaseTheme"/>
         <activity
             android:name=".segmentcontrol.SegmentControlActivity"
-            android:label="@string/title_activity_segment_control"
             android:theme="@style/AppBaseTheme"/>
         <activity
             android:name=".rule.RulerHeightActivity"

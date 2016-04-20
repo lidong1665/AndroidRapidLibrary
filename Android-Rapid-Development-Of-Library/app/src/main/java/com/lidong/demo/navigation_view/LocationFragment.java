@@ -23,7 +23,6 @@ import butterknife.OnClick;
 
 public class LocationFragment extends Fragment {
 
-
     @Bind(R.id.btn_circle_progress_view)
     Button mBtnCircleProgressView;
     @Bind(R.id.btn_tag_layout)

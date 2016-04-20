@@ -8,6 +8,8 @@ import android.util.Log;
 
 import com.alipay.euler.andfix.patch.PatchManager;
 import com.lidong.demo.mvp_dagger2.api.ApiManagerServiceModule;
+import com.lidong.demo.util.CrashHandler;
+import com.lidong.demo.util.ExceptionUtils;
 
 /**
  * Created by lidong on 2016/3/4.
@@ -19,6 +21,10 @@ public class TApplication extends Application {
     public static PatchManager mPatchManager;
 
     private static AppComponent appComponent;
+    /**
+     * 发布时候修改
+     */
+    public static boolean release =false;
 
 
     public static TApplication get(Context context){
@@ -28,15 +34,16 @@ public class TApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(this);
         try {
             PackageInfo mPackageInfo = this.getPackageManager().getPackageInfo(
                     this.getPackageName(), 0);
             VERSION_NAME = mPackageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
+            ExceptionUtils.handleException(getApplicationContext(),e);
         }
         initAndFix();
-
         appComponent=DaggerAppComponent.builder().
                 appModule(new AppModule(this)).
                 apiManagerServiceModule(new ApiManagerServiceModule())
