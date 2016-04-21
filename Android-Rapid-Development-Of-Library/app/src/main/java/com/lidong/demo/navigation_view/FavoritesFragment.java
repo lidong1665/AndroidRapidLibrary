@@ -12,7 +12,7 @@ import com.lidong.demo.R;
 import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
-import com.lidong.demo.recyclerViewDemo.SwipeListViewActivity;
+import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -67,7 +67,7 @@ public class FavoritesFragment extends Fragment {
                 startActivity(new Intent(getActivity(), GetuiSdkDemoActivity.class));
                 break;
             case R.id.btn_recycleview_layout:
-                startActivity(new Intent(getActivity(), SwipeListViewActivity.class));
+                startActivity(new Intent(getActivity(), RecyclerViewDemoActivity.class));
                 break;
         }
     }

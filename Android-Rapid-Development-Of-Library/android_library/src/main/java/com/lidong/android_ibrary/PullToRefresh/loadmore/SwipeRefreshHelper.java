@@ -24,7 +24,7 @@ public class SwipeRefreshHelper {
     private boolean hasInitLoadMoreView = false;
     private ILoadViewMoreFactory loadViewFactory = new DefaultLoadMoreFooter();
     private ListViewHandler listViewHandler = new ListViewHandler();
-    private RecyclerViewHandler recyclerViewHandler = new RecyclerViewHandler();
+    private RecyclerViewHandler1 recyclerViewHandler = new RecyclerViewHandler1();
 
     private OnLoadMoreListener mOnLoadMoreListener;
     private ILoadViewMoreFactory.ILoadMoreView mLoadMoreView;

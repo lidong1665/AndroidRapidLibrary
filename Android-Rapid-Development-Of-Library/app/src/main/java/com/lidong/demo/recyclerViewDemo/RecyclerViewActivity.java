@@ -15,10 +15,10 @@ limitations under the License.
  */
 package com.lidong.demo.recyclerViewDemo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
@@ -40,10 +40,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * RecyclerView with loadmore
  *
- * @author lidong 2016-03-08
+ * @author Chanven
+ * @date 2015-9-21
  */
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends Activity {
     PtrClassicFrameLayout ptrClassicFrameLayout;
     RecyclerView mRecyclerView;
     private List<String> mData = new ArrayList<String>();
@@ -85,7 +87,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                     public void run() {
                         page = 0;
                         mData.clear();
-                        for (int i = 0; i < 5; i++) {
+                        for (int i = 0; i < 10; i++) {
                             mData.add(new String("  RecyclerView item  -" + i));
                         }
                         mAdapter.notifyDataSetChanged();

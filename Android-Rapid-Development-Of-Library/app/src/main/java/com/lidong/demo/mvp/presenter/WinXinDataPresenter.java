@@ -11,5 +11,5 @@ public interface WinXinDataPresenter {
      * @param ps
      * @param key
      */
-    void getWeiXinData(int pno, String ps, String key);
+    void getWeiXinData(int pno, String ps, String key) throws Exception;
 }

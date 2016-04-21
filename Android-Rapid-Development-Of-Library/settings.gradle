@@ -1,1 +1,1 @@
-include ':app', ':android_library', ':umeng_library'
+include ':app', ':android_library', ':umeng_library', ':cptr'

@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 
 import com.lidong.android_ibrary.PullToRefresh.recyclerview.RecyclerAdapterWithHF;
 
-public class RecyclerViewHandler implements ViewHandler {
+public class RecyclerViewHandler1 implements ViewHandler {
 
     @Override
     public boolean handleSetAdapter(View contentView, ILoadViewMoreFactory.ILoadMoreView loadMoreView, OnClickListener onClickLoadMoreListener) {
@@ -55,7 +55,7 @@ public class RecyclerViewHandler implements ViewHandler {
         }
 
         @Override
-        public void onScrollStateChanged(android.support.v7.widget.RecyclerView recyclerView, int newState) {
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             if (newState == RecyclerView.SCROLL_STATE_IDLE && isScollBottom(recyclerView)) {
                 if (onScrollBottomListener != null) {
                     onScrollBottomListener.onScorllBootom();
@@ -76,7 +76,7 @@ public class RecyclerViewHandler implements ViewHandler {
         }
 
         @Override
-        public void onScrolled(android.support.v7.widget.RecyclerView recyclerView, int dx, int dy) {
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
 
         }
 

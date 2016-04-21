@@ -19,31 +19,36 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.Adapter;
+import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.lidong.android_ibrary.PullToRefresh.PtrClassicFrameLayout;
 import com.lidong.android_ibrary.PullToRefresh.PtrDefaultHandler;
 import com.lidong.android_ibrary.PullToRefresh.PtrFrameLayout;
-import com.lidong.android_ibrary.PullToRefresh.loadmore.GridViewWithHeaderAndFooter;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.OnLoadMoreListener;
+import com.lidong.android_ibrary.PullToRefresh.recyclerview.RecyclerAdapterWithHF;
 import com.lidong.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GridView with loadmore
- Created by lidong on 2016-03-08
+ *
+ * @author lidong 2016-03-08
  */
-public class GridViewAtivity extends AppCompatActivity {
+public class RecyclerViewActivity11 extends AppCompatActivity {
     PtrClassicFrameLayout ptrClassicFrameLayout;
-    GridViewWithHeaderAndFooter mGridView;
-    GridViewAdapter mAdapter;
-    private List<String> mData = new ArrayList<>();
+    RecyclerView mRecyclerView;
+    private List<String> mData = new ArrayList<String>();
+    private RecyclerAdapter adapter;
+    private RecyclerAdapterWithHF mAdapter;
     Handler handler = new Handler();
 
     int page = 0;
@@ -51,15 +56,18 @@ public class GridViewAtivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.girdview_layout);
-        ptrClassicFrameLayout = (PtrClassicFrameLayout) this.findViewById(R.id.test_grid_view_frame);
-        mGridView = (GridViewWithHeaderAndFooter) this.findViewById(R.id.test_grid_view);
-        initData();
+        setContentView(R.layout.recyclerview_layout);
+
+        ptrClassicFrameLayout = (PtrClassicFrameLayout) this.findViewById(R.id.test_recycler_view_frame);
+        mRecyclerView = (RecyclerView) this.findViewById(R.id.test_recycler_view);
+        init();
     }
 
-    private void initData() {
-        mAdapter = new GridViewAdapter(this, mData);
-        mGridView.setAdapter(mAdapter);
+    private void init() {
+        adapter = new RecyclerAdapter(this, mData);
+        mAdapter = new RecyclerAdapterWithHF(adapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mAdapter);
         ptrClassicFrameLayout.postDelayed(new Runnable() {
 
             @Override
@@ -77,14 +85,14 @@ public class GridViewAtivity extends AppCompatActivity {
                     public void run() {
                         page = 0;
                         mData.clear();
-                        for (int i = 0; i < 40; i++) {
-                            mData.add(new String("GridView item  -" + i));
+                        for (int i = 0; i < 5; i++) {
+                            mData.add(new String("  RecyclerView item  -" + i));
                         }
                         mAdapter.notifyDataSetChanged();
                         ptrClassicFrameLayout.refreshComplete();
                         ptrClassicFrameLayout.setLoadMoreEnable(true);
                     }
-                }, 1000);
+                }, 2000);
             }
         });
 
@@ -96,13 +104,11 @@ public class GridViewAtivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
-                        for (int i = 0; i < 4; i++) {
-                            mData.add(new String("GridView item -- add" + page));
-                        }
+                        mData.add(new String("  RecyclerView item  - add " + page));
                         mAdapter.notifyDataSetChanged();
                         ptrClassicFrameLayout.loadMoreComplete(true);
                         page++;
-                        Toast.makeText(GridViewAtivity.this, "load more complete", Toast.LENGTH_SHORT)
+                        Toast.makeText(RecyclerViewActivity11.this, "load more complete", Toast.LENGTH_SHORT)
                                 .show();
                     }
                 }, 1000);
@@ -110,44 +116,41 @@ public class GridViewAtivity extends AppCompatActivity {
         });
     }
 
-
-    public class GridViewAdapter extends BaseAdapter {
+    public class RecyclerAdapter extends Adapter<ViewHolder> {
         private List<String> datas;
         private LayoutInflater inflater;
 
-        public GridViewAdapter(Context context, List<String> data) {
+        public RecyclerAdapter(Context context, List<String> data) {
             super();
             inflater = LayoutInflater.from(context);
             datas = data;
         }
 
         @Override
-        public int getCount() {
+        public int getItemCount() {
             return datas.size();
         }
 
         @Override
-        public Object getItem(int position) {
-            return null;
+        public void onBindViewHolder(ViewHolder viewHolder, int position) {
+            ChildViewHolder holder = (ChildViewHolder) viewHolder;
+            holder.itemTv.setText(datas.get(position));
         }
 
         @Override
-        public long getItemId(int position) {
-            return 0;
+        public ViewHolder onCreateViewHolder(ViewGroup viewHolder, int position) {
+            View view = inflater.inflate(R.layout.listitem_layout, null);
+            return new ChildViewHolder(view);
         }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                convertView = inflater.inflate(R.layout.listitem_layout, parent, false);
-            }
-            TextView textView = (TextView) convertView;
-            textView.setText(datas.get(position));
-            return convertView;
-        }
+    }
 
-        public List<String> getData() {
-            return datas;
+    public class ChildViewHolder extends ViewHolder {
+        public TextView itemTv;
+
+        public ChildViewHolder(View view) {
+            super(view);
+            itemTv = (TextView) view;
         }
 
     }

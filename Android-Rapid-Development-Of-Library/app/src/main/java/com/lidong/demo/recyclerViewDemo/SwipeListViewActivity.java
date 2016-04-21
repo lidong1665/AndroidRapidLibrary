@@ -13,7 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.lidong.android_ibrary.PullToRefresh.loadmore.OnLoadMoreListener;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.SwipeRefreshHelper;
 import com.lidong.demo.R;

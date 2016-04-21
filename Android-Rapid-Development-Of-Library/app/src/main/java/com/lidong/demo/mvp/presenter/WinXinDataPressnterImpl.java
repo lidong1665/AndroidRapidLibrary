@@ -27,7 +27,7 @@ public class WinXinDataPressnterImpl implements WinXinDataPresenter,WinXinDataMo
     }
 
     @Override
-    public void getWeiXinData(int pno, String ps, String key) {
+    public void getWeiXinData(int pno, String ps, String key) throws Exception {
         mWinXinDataModel.getWeiXinData(pno,ps,key);
     }
 

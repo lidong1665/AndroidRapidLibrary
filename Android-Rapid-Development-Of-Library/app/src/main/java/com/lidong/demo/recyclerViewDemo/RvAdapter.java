@@ -46,7 +46,7 @@ public class RvAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public NormalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        return new NormalViewHolder(mLayoutInflater.inflate(R.layout.rv_item,parent,false));
+        return new NormalViewHolder(mLayoutInflater.inflate(R.layout.rv_item,null));
     }
 
     @Override

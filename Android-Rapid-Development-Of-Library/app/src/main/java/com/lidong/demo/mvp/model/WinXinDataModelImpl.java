@@ -26,7 +26,7 @@ public class WinXinDataModelImpl implements WinXinDataModel {
     }
 
     @Override
-    public void getWeiXinData(int pno, String ps, String key) {
+    public void getWeiXinData(int pno, String ps, String key) throws Exception {
 
         ApiManager.getWeiXinData(pno,ps,key).subscribeOn(Schedulers.io()).
                 observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<WinXinData>() {

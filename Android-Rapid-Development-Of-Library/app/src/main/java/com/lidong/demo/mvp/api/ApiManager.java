@@ -1,5 +1,6 @@
 package com.lidong.demo.mvp.api;
 
+import com.lidong.demo.mvp.bean.DreamData;
 import com.lidong.demo.mvp.bean.WeatherData;
 import com.lidong.demo.mvp.bean.WinXinData;
 
@@ -38,6 +39,15 @@ public class ApiManager {
         Observable<WeatherData> ss = apiManager.getWeatherData(format, city, "ad1d20bebafe0668502c8eea5ddd0333");
         return  ss;
     }
+    /**
+     * 获取周公解梦类型
+     * @param key
+     * @return
+     */
+    public static  Observable<DreamData> getDreamData(String key) {
+        Observable<DreamData> ss = apiManager.getDreamData(key);
+        return  ss;
+    }
 
 
     /**
@@ -47,7 +57,7 @@ public class ApiManager {
      * @param key
      * @return
      */
-    public static  Observable<WinXinData> getWeiXinData(int pno, String ps, String key) {
+    public static  Observable<WinXinData> getWeiXinData(int pno, String ps, String key) throws Exception {
         Observable<WinXinData> ss = apiManager.getWinXinNewData(pno,ps,key);
         return  ss;
     }

@@ -1,7 +1,6 @@
 package com.lidong.demo.mvp_dagger2;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +21,6 @@ import butterknife.ButterKnife;
 
 public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp_dagger2.WeatherView{
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)
@@ -49,7 +46,7 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
+        setContentView(R.layout.content_weather);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         mWeatherPresenter.getWeatherData("2", "苏州");

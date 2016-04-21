@@ -2,8 +2,6 @@ package com.lidong.demo.mvp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lidong.android_ibrary.LoadingUIHelper;
+import com.lidong.demo.AppComponent;
+import com.lidong.demo.BaseActivity;
 import com.lidong.demo.R;
 import com.lidong.demo.mvp.bean.WeatherData;
 import com.lidong.demo.mvp.presenter.WeatherPresenter;
@@ -21,10 +21,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DWeatherActivity extends AppCompatActivity implements WeatherView {
+public class DWeatherActivity extends BaseActivity implements WeatherView {
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
     @Bind(R.id.textView1)
     TextView textView1;
     @Bind(R.id.textView2)
@@ -50,12 +48,16 @@ public class DWeatherActivity extends AppCompatActivity implements WeatherView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
+        setContentView(R.layout.content_weather);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
         mWeatherPresenter = new WeatherPresenterImp(this);
         mWeatherPresenter.getWeatherData("2", "苏州");
 
+
+    }
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
 
     }
 

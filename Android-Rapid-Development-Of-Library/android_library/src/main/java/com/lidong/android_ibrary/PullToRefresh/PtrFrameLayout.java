@@ -21,7 +21,7 @@ import com.lidong.android_ibrary.PullToRefresh.loadmore.ILoadViewMoreFactory;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.ListViewHandler;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.OnLoadMoreListener;
 import com.lidong.android_ibrary.PullToRefresh.loadmore.OnScrollBottomListener;
-import com.lidong.android_ibrary.PullToRefresh.loadmore.RecyclerViewHandler;
+import com.lidong.android_ibrary.PullToRefresh.loadmore.RecyclerViewHandler1;
 import com.lidong.android_ibrary.PullToRefresh.utils.PtrCLog;
 import com.lidong.android_ibrary.R;
 
@@ -1046,7 +1046,7 @@ public class PtrFrameLayout extends ViewGroup {
     private boolean hasInitLoadMoreView = false;
     private ILoadViewMoreFactory loadViewFactory = new DefaultLoadMoreFooter();
     private ListViewHandler listViewHandler = new ListViewHandler();
-    private RecyclerViewHandler recyclerViewHandler = new RecyclerViewHandler();
+    private RecyclerViewHandler1 recyclerViewHandler = new RecyclerViewHandler1();
     private GridViewHandler gridViewHandler = new GridViewHandler();
     
     private View mContentView;

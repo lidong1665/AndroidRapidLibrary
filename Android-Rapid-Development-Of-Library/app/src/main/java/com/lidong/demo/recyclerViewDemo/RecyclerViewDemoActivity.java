@@ -1,11 +1,10 @@
 package com.lidong.demo.recyclerViewDemo;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.lidong.android_ibrary.PullToRefresh.PtrClassicFrameLayout;
@@ -21,7 +20,7 @@ import java.util.List;
 /**
  * RecyclerView上拉刷新和上拉加载的实现
  */
-public class RecyclerViewDemoActivity extends AppCompatActivity {
+public class RecyclerViewDemoActivity extends Activity {
 
     private RecyclerView mRecyclerView;
     //支持下拉刷新的ViewGroup
@@ -36,13 +35,9 @@ public class RecyclerViewDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view_demo);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_recycler_view_demo);
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new RvAdapter(RecyclerViewDemoActivity.this, title);
         mAdapter = new RecyclerAdapterWithHF(adapter);
@@ -51,16 +46,16 @@ public class RecyclerViewDemoActivity extends AppCompatActivity {
 
         mPtrFrame = (PtrClassicFrameLayout) findViewById(R.id.rotate_header_list_view_frame);
         //下拉刷新支持时间
-        mPtrFrame.setLastUpdateTimeRelateObject(this);
-        //下拉刷新一些设置 详情参考文档
-        mPtrFrame.setResistance(1.7f);
-        mPtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
-        mPtrFrame.setDurationToClose(200);
-        mPtrFrame.setDurationToCloseHeader(1000);
-        // default is false
-        mPtrFrame.setPullToRefresh(false);
-        // default is true
-        mPtrFrame.setKeepHeaderWhenRefresh(true);
+//        mPtrFrame.setLastUpdateTimeRelateObject(this);
+//        //下拉刷新一些设置 详情参考文档
+//        mPtrFrame.setResistance(1.7f);
+//        mPtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
+//        mPtrFrame.setDurationToClose(200);
+//        mPtrFrame.setDurationToCloseHeader(1000);
+//        // default is false
+//        mPtrFrame.setPullToRefresh(false);
+//        // default is true
+//        mPtrFrame.setKeepHeaderWhenRefresh(true);
         //进入Activity就进行自动下拉刷新
         mPtrFrame.postDelayed(new Runnable() {
             @Override

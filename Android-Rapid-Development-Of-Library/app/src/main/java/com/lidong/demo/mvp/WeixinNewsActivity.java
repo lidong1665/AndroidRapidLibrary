@@ -26,6 +26,7 @@ import com.lidong.demo.mvp.bean.WinXinData;
 import com.lidong.demo.mvp.presenter.WinXinDataPresenter;
 import com.lidong.demo.mvp.presenter.WinXinDataPressnterImpl;
 import com.lidong.demo.mvp.view.WeixinNewsView;
+import com.lidong.demo.util.ExceptionUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -109,7 +110,11 @@ public class WeixinNewsActivity extends BaseActivity implements WeixinNewsView,
     @Override
     public void loadMore() {
         page++;
-        mWinXinDataPresenter.getWeiXinData(page,"10","f16af393a63364b729fd81ed9fdd4b7d");
+        try {
+            mWinXinDataPresenter.getWeiXinData(page,"10","f16af393a63364b729fd81ed9fdd4b7d");
+        } catch (Exception e) {
+            ExceptionUtils.handleException(this,e);
+        }
     }
 
     @Override
@@ -118,7 +123,11 @@ public class WeixinNewsActivity extends BaseActivity implements WeixinNewsView,
             @Override
             public void run() {
                 page = 1;
-                mWinXinDataPresenter.getWeiXinData(1,"10","f16af393a63364b729fd81ed9fdd4b7d");
+                try {
+                    mWinXinDataPresenter.getWeiXinData(1,"10","f16af393a63364b729fd81ed9fdd4b7d");
+                } catch (Exception e) {
+                    ExceptionUtils.handleException(WeixinNewsActivity.this,e);
+                }
             }
         },2000);
     }

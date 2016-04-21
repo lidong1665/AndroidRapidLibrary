@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RecyclerAdapterWithHF1 extends RecyclerView.Adapter<ViewHolder> {
 
     public static final int TYPE_MANAGER_OTHER = 0;
     public static final int TYPE_MANAGER_LINEAR = 1;
@@ -82,12 +82,12 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
         return mAdapter.getItemId(position);
     }
 
-    public RecyclerView.ViewHolder onCreateViewHolderHF(ViewGroup viewGroup, int type) {
+    public ViewHolder onCreateViewHolderHF(ViewGroup viewGroup, int type) {
         return mAdapter.onCreateViewHolder(viewGroup, type);
     }
 
     @Override
-    public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int type) {
+    public final ViewHolder onCreateViewHolder(ViewGroup viewGroup, int type) {
         // if our position is one of our items (this comes from
         // getItemViewType(int position) below)
         if (type != TYPE_HEADER && type != TYPE_FOOTER) {
@@ -105,7 +105,7 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     @Override
-    public final void onBindViewHolder(final RecyclerView.ViewHolder vh, int position) {
+    public final void onBindViewHolder(final ViewHolder vh, int position) {
         // check what type of view our position is
         if (isHeader(position)) {
             View v = mHeaders.get(position);
@@ -227,7 +227,7 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     // our header/footer RecyclerView.ViewHolder is just a FrameLayout
-    public static class HeaderFooterViewHolder extends RecyclerView.ViewHolder {
+    public static class HeaderFooterViewHolder extends ViewHolder {
         FrameLayout base;
 
         public HeaderFooterViewHolder(View itemView) {
@@ -268,8 +268,8 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
         @Override
         public void onClick(View v) {
             int position = getRealPosition(vh.getLayoutPosition());
-            if (RecyclerAdapterWithHF.this.onItemClickListener != null) {
-                RecyclerAdapterWithHF.this.onItemClickListener.onItemClick(RecyclerAdapterWithHF.this, vh, position);
+            if (RecyclerAdapterWithHF1.this.onItemClickListener != null) {
+                RecyclerAdapterWithHF1.this.onItemClickListener.onItemClick(RecyclerAdapterWithHF1.this, vh, position);
             }
             onItemClick(vh, position);
         }
@@ -286,8 +286,8 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
         @Override
         public boolean onLongClick(View v) {
             int position = getRealPosition(vh.getLayoutPosition());
-            if (RecyclerAdapterWithHF.this.onItemLongClickListener != null) {
-                RecyclerAdapterWithHF.this.onItemLongClickListener.onItemLongClick(RecyclerAdapterWithHF.this, vh,
+            if (RecyclerAdapterWithHF1.this.onItemLongClickListener != null) {
+                RecyclerAdapterWithHF1.this.onItemLongClickListener.onItemLongClick(RecyclerAdapterWithHF1.this, vh,
 						position);
             }
             onItemLongClick(vh, position);
@@ -305,16 +305,16 @@ public class RecyclerAdapterWithHF extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public static interface OnItemClickListener {
-        void onItemClick(RecyclerAdapterWithHF adapter, ViewHolder vh, int position);
+        void onItemClick(RecyclerAdapterWithHF1 adapter, ViewHolder vh, int position);
     }
 
     public static interface OnItemLongClickListener {
-        void onItemLongClick(RecyclerAdapterWithHF adapter, ViewHolder vh, int position);
+        void onItemLongClick(RecyclerAdapterWithHF1 adapter, ViewHolder vh, int position);
     }
 
     private RecyclerView.Adapter<ViewHolder> mAdapter;
 
-    public RecyclerAdapterWithHF(RecyclerView.Adapter<ViewHolder> adapter) {
+    public RecyclerAdapterWithHF1(RecyclerView.Adapter<ViewHolder> adapter) {
         super();
         this.mAdapter = adapter;
         adapter.registerAdapterDataObserver(adapterDataObserver);

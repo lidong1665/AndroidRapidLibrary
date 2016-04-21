@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.lidong.demo.R;
-import com.lidong.demo.mvp.DWeatherActivity;
+import com.lidong.demo.mvp.DreamDataActivity;
 import com.lidong.demo.mvp.WeiXinWebViewActivity;
 import com.lidong.demo.mvp.WeixinNewsActivity;
 
@@ -64,7 +64,7 @@ public class FindFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_get:
-                startActivity(new Intent(getActivity(), DWeatherActivity.class));
+                startActivity(new Intent(getActivity(), DreamDataActivity.class));
                 break;
             case R.id.btn_post:
                 startActivity(new Intent(getActivity(), WeixinNewsActivity.class));

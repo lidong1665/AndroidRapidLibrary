@@ -183,12 +183,10 @@
             android:theme="@style/AppBaseTheme"/>
         <activity
             android:name=".recyclerViewDemo.RecyclerViewDemoActivity"
-            android:label="@string/title_activity_recycler_view_demo"
-            android:theme="@style/AppBaseTheme"/>
+            android:label="@string/title_activity_recycler_view_demo"/>
         <activity
             android:name=".recyclerViewDemo.RecyclerViewActivity"
-            android:label="@string/title_activity_recycler_view_demo"
-            android:theme="@style/AppBaseTheme"/>
+            android:label="@string/title_activity_recycler_view_demo"/>
         <activity
             android:name=".recyclerViewDemo.SwipeListViewActivity"
             android:label="@string/title_activity_recycler_view_demo"
@@ -243,6 +241,10 @@
         <activity android:name=".mvp.WeixinNewsActivity">
         </activity>
         <activity android:name=".mvp.WeiXinWebViewActivity">
+        </activity>
+        <activity android:name=".mvp.DreamDataActivity">
+        </activity>
+        <activity android:name=".mvp.SearchDreamActivity">
         </activity>
     </application>
 
