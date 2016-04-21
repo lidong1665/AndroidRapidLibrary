@@ -50,6 +50,7 @@ public class DWeatherActivity extends BaseActivity implements WeatherView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_weather);
         ButterKnife.bind(this);
+        setActivityTitle("Android 中MVP模式的使用");
         mWeatherPresenter = new WeatherPresenterImp(this);
         mWeatherPresenter.getWeatherData("2", "苏州");
 

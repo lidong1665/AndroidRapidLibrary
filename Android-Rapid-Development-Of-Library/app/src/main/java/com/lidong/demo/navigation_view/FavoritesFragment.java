@@ -12,6 +12,7 @@ import com.lidong.demo.R;
 import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
+import com.lidong.demo.mvp.WeiXinWebViewActivity;
 import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
 
 import butterknife.Bind;
@@ -28,6 +29,8 @@ public class FavoritesFragment extends Fragment {
     Button mBtnGpushLayout;
     @Bind(R.id.btn_recycleview_layout)
     Button mBtnRecycleviewLayout;
+    @Bind(R.id.btn_broadcast)
+    Button mBtnBroadcast;
 
     public static FavoritesFragment newInstance(String param1) {
         FavoritesFragment fragment = new FavoritesFragment();
@@ -54,7 +57,7 @@ public class FavoritesFragment extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.btn_event_layout, R.id.btn_greendao_layout,R.id.btn_recycleview_layout,R.id.btn_gpush_layout})
+    @OnClick({R.id.btn_event_layout, R.id.btn_greendao_layout, R.id.btn_recycleview_layout, R.id.btn_gpush_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_event_layout:
@@ -78,7 +81,12 @@ public class FavoritesFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    @OnClick(R.id.btn_recycleview_layout)
+
+    @OnClick(R.id.btn_broadcast)
     public void onClick() {
+        Intent intent = new Intent(getActivity(), WeiXinWebViewActivity.class);
+        intent.putExtra("url", "http://blog.csdn.net/u010046908/article/details/50697441");
+        intent.putExtra("title", "Android Broadcast 做的简单封装");
+        startActivity(intent);
     }
 }

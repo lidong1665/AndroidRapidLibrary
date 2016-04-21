@@ -23,6 +23,12 @@
         android:gravity="left"
         android:text="Android中个推demo的使用"/>
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android Broadcast做的简单封装"
+        android:gravity="left"
+        android:id="@+id/btn_broadcast"/>
+    <Button
         android:id="@+id/btn_recycleview_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

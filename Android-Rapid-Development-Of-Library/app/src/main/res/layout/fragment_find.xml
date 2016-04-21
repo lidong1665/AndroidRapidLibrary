@@ -30,4 +30,5 @@
         android:text="Android 仿照微信发说说"
         android:gravity="left"
         android:id="@+id/btn_upload_file_topic"/>
+
 </LinearLayout>
