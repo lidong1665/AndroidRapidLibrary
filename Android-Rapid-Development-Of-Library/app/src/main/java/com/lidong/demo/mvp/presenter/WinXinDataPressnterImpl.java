@@ -34,7 +34,11 @@ public class WinXinDataPressnterImpl implements WinXinDataPresenter,WinXinDataMo
 
     @Override
     public void onSuccess(List<WinXinData.ResultBean.ListBean> s) {
-        mWeixinNewsView.loadWeiXinData(s);
+        try {
+            mWeixinNewsView.loadWeiXinData(s);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

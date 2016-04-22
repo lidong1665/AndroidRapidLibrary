@@ -276,6 +276,8 @@
 
         <activity android:name=".baidu_map_first.BaiduMapFirstActivity">
         </activity>
+        <activity android:name=".baidu_map_first.DisplayBaiduMapActivity">
+        </activity>
     </application>
 
 </manifest>

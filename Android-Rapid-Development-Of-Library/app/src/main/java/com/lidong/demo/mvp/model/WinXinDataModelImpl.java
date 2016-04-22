@@ -33,7 +33,7 @@ public class WinXinDataModelImpl implements WinXinDataModel {
             @Override
             public void call(WinXinData winXinData) {
                 if (winXinData!=null && "success".equals(winXinData.getReason())){
-                    mWeixinDataOnlistener.onSuccess(winXinData.getResult().getList());
+                        mWeixinDataOnlistener.onSuccess(winXinData.getResult().getList());
                 }
 
             }

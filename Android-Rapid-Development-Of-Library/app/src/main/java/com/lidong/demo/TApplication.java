@@ -23,6 +23,7 @@ public class TApplication extends Application {
     public static PatchManager mPatchManager;
 
     private static AppComponent appComponent;
+    private static TApplication sTApplication;
     /**
      * 发布时候修改
      */
@@ -31,6 +32,10 @@ public class TApplication extends Application {
 
     public static TApplication get(Context context){
         return (TApplication)context.getApplicationContext();
+    }
+
+    public static TApplication getContext(){
+        return sTApplication;
     }
 
     @Override

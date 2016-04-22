@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,6 +17,7 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
@@ -36,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //AB:C6:D4:99:EA:3F:F9:A3:9C:B7:06:22:6A:56:C7:96:95:F3:F9:C0
-public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap.OnMapLoadedCallback {
+public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap.OnMapLoadedCallback ,BaiduMap.OnMapClickListener,BaiduMap.SnapshotReadyCallback{
 
     @SuppressWarnings("unused")
     private static final String LTAG = BaiduMapFirstActivity.class.getSimpleName();
@@ -45,7 +47,28 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
 
     @Override
     public void onMapLoaded() {
+        Log.d(LTAG, "onMapLoaded: "+"地图加载结束");
+    }
 
+    @Override
+    public void onMapClick(LatLng latLng) {//地图单击事件回调函数
+        Log.d(LTAG, "onMapClick: "+latLng.toString());
+    }
+
+    @Override
+    public boolean onMapPoiClick(MapPoi mapPoi) {//地图内 Poi 单击事件回调函数
+        String name = mapPoi.getName();
+        mapPoi.toString();
+        Log.d(LTAG, "onMapPoiClick: "+name);
+        return false;
+    }
+
+    @Override
+    public void onSnapshotReady(Bitmap bitmap) {//截屏回调的接口
+        Log.d(LTAG, "onSnapshotReady: "+bitmap.toString());
+//        Intent in = new Intent(BaiduMapFirstActivity.this,DisplayBaiduMapActivity.class);
+//        in.putExtra("bitmap",bitmap);
+//        startActivity(in);
     }
 
     /**
@@ -94,6 +117,8 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
 
 
         mBaiduMap.setOnMapLoadedCallback(this);
+        mBaiduMap.setOnMapClickListener(this);
+        mBaiduMap.snapshotScope(null,this);
         mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(ms));
         // 定义点聚合管理类ClusterManager
         mClusterManager = new ClusterManager<MyItem>(this, mBaiduMap);

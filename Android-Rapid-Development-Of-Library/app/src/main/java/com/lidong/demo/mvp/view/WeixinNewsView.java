@@ -17,6 +17,6 @@ public interface WeixinNewsView {
      *
      * @param s
      */
-    void loadWeiXinData(List<WinXinData.ResultBean.ListBean> s);
+    void loadWeiXinData(List<WinXinData.ResultBean.ListBean> s) throws Exception;
 
 }
