@@ -8,22 +8,18 @@
         android:id="@+id/btn_mvp_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:gravity="left"
         android:text="Android中MVP模式的"/>
     <Button
         android:id="@+id/btn_mvp1_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:gravity="left"
         android:text="Android中MVP的Dragger2和Retrofit2.0的整合"/>
+    <Button
+        android:id="@+id/btn_baidu_map_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Android中百度地图学习"/>
 </LinearLayout>

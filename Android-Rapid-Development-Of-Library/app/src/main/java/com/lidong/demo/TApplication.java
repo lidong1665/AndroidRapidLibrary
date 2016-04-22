@@ -4,9 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.alipay.euler.andfix.patch.PatchManager;
+import com.baidu.mapapi.SDKInitializer;
 import com.lidong.demo.mvp_dagger2.api.ApiManagerServiceModule;
 import com.lidong.demo.util.CrashHandler;
 import com.lidong.demo.util.ExceptionUtils;
@@ -48,6 +50,8 @@ public class TApplication extends Application {
                 appModule(new AppModule(this)).
                 apiManagerServiceModule(new ApiManagerServiceModule())
                 .build();
+        //百度地图的初始化
+        SDKInitializer.initialize(this);
 
     }
 
@@ -66,4 +70,11 @@ public class TApplication extends Application {
     public static AppComponent getAppComponent() {
         return appComponent;
     }
+
+    @Override
+    public void attachBaseContext(Context base) {
+        MultiDex.install(base);
+        super.attachBaseContext(base);
+    }
+
 }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.lidong.demo.R;
+import com.lidong.demo.baidu_map_first.BaiduMapFirstActivity;
 import com.lidong.demo.mvp.DWeatherActivity;
 import com.lidong.demo.mvp_dagger2.WeatherActivity;
 
@@ -23,6 +24,8 @@ public class BookFragment extends Fragment {
     Button mBtnMvpLayout;
     @Bind(R.id.btn_mvp1_layout)
     Button mBtnMvp1Layout;
+    @Bind(R.id.btn_baidu_map_1)
+    Button mBtnBaiduMap1;
 
     public static BookFragment newInstance(String param1) {
         BookFragment fragment = new BookFragment();
@@ -66,5 +69,11 @@ public class BookFragment extends Fragment {
                 startActivity(new Intent(getActivity(), WeatherActivity.class));
                 break;
         }
+    }
+
+    @OnClick(R.id.btn_baidu_map_1)
+    public void onClick() {
+        Intent intent = new Intent(getActivity(), BaiduMapFirstActivity.class);
+        startActivity(intent);
     }
 }

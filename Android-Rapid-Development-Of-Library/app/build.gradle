@@ -13,12 +13,18 @@ android {
     compileSdkVersion 23
     buildToolsVersion "21.1.2"
 
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
     defaultConfig {
         applicationId "com.lidong.demo"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 100
         versionName "1.0.0"
+        multiDexEnabled true
         manifestPlaceholders = [
                 GETUI_APP_ID : "2TP3FVe28v50iTvkffYio5",
                 GETUI_APP_KEY : "0DFJrDtPPn7vVnGYhptBt7",
@@ -41,6 +47,11 @@ android {
     lintOptions {
         abortOnError false
     }
+    sourceSets {
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
 }
 
 dependencies {
@@ -65,4 +76,6 @@ dependencies {
     compile 'com.google.dagger:dagger-compiler:2.0'
     compile 'com.umeng.analytics:analytics:5.6.7'
     compile 'com.github.arimorty:floatingsearchview:1.1.2'
+    compile files('libs/locSDK_6.13.jar')
+    compile 'com.android.support:multidex:1.0.1'
 }
