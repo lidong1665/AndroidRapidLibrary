@@ -34,15 +34,24 @@
 
 
     <com.lidong.android_ibrary.view.CustomImageView
-        android:layout_marginTop="12dp"
-        android:layout_below="@id/ii"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:padding="10dp"
+        android:id="@+id/ll_x"
         custom:image2="@mipmap/push"
         custom:imageScaleType2="center"
         custom:titleText2="hello andorid ! "
         custom:titleTextColor2="#ff0000"
-        custom:titleTextSize2="30sp" />
+        custom:titleTextSize2="30sp"
+        android:layout_alignBottom="@+id/ii"
+        android:layout_centerHorizontal="true"/>
+
+    <com.lidong.android_ibrary.view.DrawView
+        android:layout_below="@id/ll_x"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#646464"
+        android:layout_alignParentBottom="true">
+
+    </com.lidong.android_ibrary.view.DrawView>
 </RelativeLayout>

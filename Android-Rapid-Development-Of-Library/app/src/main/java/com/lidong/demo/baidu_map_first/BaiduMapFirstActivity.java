@@ -53,6 +53,8 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
     @Override
     public void onMapClick(LatLng latLng) {//地图单击事件回调函数
         Log.d(LTAG, "onMapClick: "+latLng.toString());
+        Toast.makeText(BaiduMapFirstActivity.this,latLng.toString(),Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -60,6 +62,7 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
         String name = mapPoi.getName();
         mapPoi.toString();
         Log.d(LTAG, "onMapPoiClick: "+name);
+        Toast.makeText(BaiduMapFirstActivity.this,name,Toast.LENGTH_SHORT).show();
         return false;
     }
 
