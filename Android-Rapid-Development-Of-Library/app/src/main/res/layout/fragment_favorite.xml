@@ -34,6 +34,11 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:text=" Android中RecycleView的上拉刷新和上拉加载功"/>
-
+    <Button
+        android:id="@+id/btn_snswer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text=" Android中答题器的实现"/>
 
 </LinearLayout>

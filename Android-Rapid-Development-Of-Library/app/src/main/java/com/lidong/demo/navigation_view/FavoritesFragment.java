@@ -14,6 +14,7 @@ import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
 import com.lidong.demo.mvp.WeiXinWebViewActivity;
 import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
+import com.lidong.demo.view.GestureFilpActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +32,8 @@ public class FavoritesFragment extends Fragment {
     Button mBtnRecycleviewLayout;
     @Bind(R.id.btn_broadcast)
     Button mBtnBroadcast;
+    @Bind(R.id.btn_snswer_layout)
+    Button mBtnSnswerLayout;
 
     public static FavoritesFragment newInstance(String param1) {
         FavoritesFragment fragment = new FavoritesFragment();
@@ -57,7 +60,8 @@ public class FavoritesFragment extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.btn_event_layout, R.id.btn_greendao_layout, R.id.btn_recycleview_layout, R.id.btn_gpush_layout})
+    @OnClick({R.id.btn_event_layout, R.id.btn_greendao_layout, R.id.btn_recycleview_layout,
+            R.id.btn_gpush_layout,R.id.btn_snswer_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_event_layout:
@@ -71,6 +75,9 @@ public class FavoritesFragment extends Fragment {
                 break;
             case R.id.btn_recycleview_layout:
                 startActivity(new Intent(getActivity(), RecyclerViewDemoActivity.class));
+                break;
+            case R.id.btn_snswer_layout:
+                startActivity(new Intent(getActivity(), GestureFilpActivity.class));
                 break;
         }
     }
