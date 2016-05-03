@@ -37,3 +37,6 @@ Android 快速开发库，主要想实现一条属于自己的开发框架。包
 
 #Android 百度地图的简单实用
 ![](http://lbc.baidu.com/static/cms/images/android_dev2.jpg)
+
+#Android 实现答题器功能（通过手势实现翻页效果）
+![这里写图片描述](http://img.blog.csdn.net/20160503164536388)   ![这里写图片描述](http://img.blog.csdn.net/20160503164602992)
