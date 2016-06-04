@@ -10,14 +10,20 @@ buildscript {
     }
 }
 android {
+    signingConfigs {
+        config {
+            storeFile file('/Users/lidong/AndroidStudioProjects/AndroidRapidLibrary/Android-Rapid-Development-Of-Library/app/android_ripid_lib.jks')
+            keyAlias 'android_ripid_lib'
+            keyPassword '325106ld'
+            storePassword '325106'
+        }
+    }
     compileSdkVersion 23
-    buildToolsVersion "21.1.2"
-
+    buildToolsVersion '23.0.3'
     dexOptions {
         incremental true
         javaMaxHeapSize "4g"
     }
-
     defaultConfig {
         applicationId "com.lidong.demo"
         minSdkVersion 14
@@ -26,23 +32,29 @@ android {
         versionName "1.0.0"
         multiDexEnabled true
         manifestPlaceholders = [
-                GETUI_APP_ID : "2TP3FVe28v50iTvkffYio5",
-                GETUI_APP_KEY : "0DFJrDtPPn7vVnGYhptBt7",
-                GETUI_APP_SECRET : "n7Qd3Z0wjP94vzENSQ9Lb5",
-                PACKAGE_NAME : applicationId
+                GETUI_APP_ID    : "2TP3FVe28v50iTvkffYio5",
+                GETUI_APP_KEY   : "0DFJrDtPPn7vVnGYhptBt7",
+                GETUI_APP_SECRET: "n7Qd3Z0wjP94vzENSQ9Lb5",
+                PACKAGE_NAME    : applicationId
 
         ]
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
     packagingOptions {
-            exclude 'lib/armeabi/libgetuiext.so'
-            exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'lib/armeabi/libgetuiext.so'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
     lintOptions {
         abortOnError false
@@ -51,7 +63,8 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
-
+    productFlavors {
+    }
 }
 
 dependencies {

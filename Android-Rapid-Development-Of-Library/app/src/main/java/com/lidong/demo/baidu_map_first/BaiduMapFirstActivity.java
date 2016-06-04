@@ -10,6 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.location.Poi;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.clusterutil.clustering.ClusterItem;
 import com.baidu.mapapi.clusterutil.clustering.ClusterManager;
@@ -25,25 +30,33 @@ import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.model.LatLng;
 import com.lidong.demo.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+//D0:5B:BE:3E:58:C8:CA:EA:74:27:F5:03:6C:85:0B:0F:58:95:BC:A6
+
 //AB:C6:D4:99:EA:3F:F9:A3:9C:B7:06:22:6A:56:C7:96:95:F3:F9:C0
-public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap.OnMapLoadedCallback ,BaiduMap.OnMapClickListener,BaiduMap.SnapshotReadyCallback{
+public class BaiduMapFirstActivity extends AppCompatActivity implements
+        BaiduMap.OnMapLoadedCallback ,
+        BaiduMap.OnMapClickListener,
+        BaiduMap.SnapshotReadyCallback,
+        BaiduMap.OnMyLocationClickListener{
 
     @SuppressWarnings("unused")
     private static final String LTAG = BaiduMapFirstActivity.class.getSimpleName();
     private MapView mMapView;
     private BaiduMap mBaiduMap;
+
+
+    public LocationClient mLocationClient = null;
+    public BDLocationListener myListener = new MyLocationListener();
+
+
+    @Override
+    public boolean onMyLocationClick() {
+
+        return false;
+    }
 
     @Override
     public void onMapLoaded() {
@@ -138,13 +151,6 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
                 LatLng ll = marker.getPosition();
                 Toast.makeText(BaiduMapFirstActivity.this,ll.toString() ,Toast.LENGTH_SHORT).show();
                 final String ss = ll.latitude+","+ll.longitude;
-                new Thread(){
-                    @Override
-                    public void run() {
-                        super.run();
-                        getCityFromLngAndlat(ss);
-                    }
-                }.start();
                 return false;
             }
         });
@@ -156,6 +162,11 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
         iFilter.addAction(SDKInitializer.SDK_BROADCAST_ACTION_STRING_NETWORK_ERROR);
         mReceiver = new SDKReceiver();
         registerReceiver(mReceiver, iFilter);
+        mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
+        mLocationClient.registerLocationListener( myListener );
+        initLocation();
+        mBaiduMap.setMyLocationEnabled(true);
+        mLocationClient.start();
     }
 
     private void addMarkers() {
@@ -216,59 +227,144 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements BaiduMap
     }
 
 
-    public static void getCityFromLngAndlat(String ss)
-    {
-//       http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&callback=renderReverse&location=39.983424,116.322987&output=json&pois=1
-//        http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location=39.963175,116.400244&output=json&pois=1
-//通过修改这里的location（经纬度）参数，即可得到相应经纬度的详细信息
-        String url2 = "http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location="+ss+"&output=json&pois=1 ";
-        URL myURL2 = null;
-        URLConnection httpsConn2 = null;
-        try {
-            myURL2 = new URL(url2);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        InputStreamReader insr2 = null;
-        BufferedReader br2 = null;
-        try {
-            httpsConn2 = (URLConnection) myURL2.openConnection();// 不使用代理
-            if (httpsConn2 != null) {
-                insr2 = new InputStreamReader( httpsConn2.getInputStream(), "UTF-8");
-                br2 = new BufferedReader(insr2);
-                String data2 = br2.readLine();
-                try
-                {
-                    //解析得到的json格式数据
-                    JSONObject dataJson = new JSONObject(data2);
-//                    JSONObject result = dataJson.getJSONObject("result");
-//                    JSONObject addressComponent = result.getJSONObject("addressComponent");
-//                    String city = addressComponent.getString("city");
-                    System.out.println("city = " + data2);
-                } catch (JSONException e)
-                {
-                    e.printStackTrace();
+//    public static void getCityFromLngAndlat(String ss)
+//    {
+////       http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&callback=renderReverse&location=39.983424,116.322987&output=json&pois=1
+////        http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location=39.963175,116.400244&output=json&pois=1
+////通过修改这里的location（经纬度）参数，即可得到相应经纬度的详细信息
+//        String url2 = "http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location="+ss+"&output=json&pois=1 ";
+//        URL myURL2 = null;
+//        URLConnection httpsConn2 = null;
+//        try {
+//            myURL2 = new URL(url2);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//        InputStreamReader insr2 = null;
+//        BufferedReader br2 = null;
+//        try {
+//            httpsConn2 = (URLConnection) myURL2.openConnection();// 不使用代理
+//            if (httpsConn2 != null) {
+//                insr2 = new InputStreamReader( httpsConn2.getInputStream(), "UTF-8");
+//                br2 = new BufferedReader(insr2);
+//                String data2 = br2.readLine();
+//                try
+//                {
+//                    //解析得到的json格式数据
+//                    JSONObject dataJson = new JSONObject(data2);
+////                    JSONObject result = dataJson.getJSONObject("result");
+////                    JSONObject addressComponent = result.getJSONObject("addressComponent");
+////                    String city = addressComponent.getString("city");
+//                    System.out.println("city = " + data2);
+//                } catch (JSONException e)
+//                {
+//                    e.printStackTrace();
+//                }
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if(insr2!=null){
+//                try {
+//                    insr2.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if(br2!=null){
+//                try {
+//                    br2.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
+
+    public class MyLocationListener implements BDLocationListener {
+
+        @Override
+        public void onReceiveLocation(BDLocation location) {
+            //Receive Location
+            StringBuffer sb = new StringBuffer(256);
+            sb.append("time : ");
+            sb.append(location.getTime());
+            sb.append("\nerror code : ");
+            sb.append(location.getLocType());
+            sb.append("\nlatitude : ");
+            sb.append(location.getLatitude());
+            sb.append("\nlontitude : ");
+            sb.append(location.getLongitude());
+            sb.append("\nradius : ");
+            sb.append(location.getRadius());
+            if (location.getLocType() == BDLocation.TypeGpsLocation) {// GPS定位结果
+                sb.append("\nspeed : ");
+                sb.append(location.getSpeed());// 单位：公里每小时
+                sb.append("\nsatellite : ");
+                sb.append(location.getSatelliteNumber());
+                sb.append("\nheight : ");
+                sb.append(location.getAltitude());// 单位：米
+                sb.append("\ndirection : ");
+                sb.append(location.getDirection());// 单位度
+                sb.append("\naddr : ");
+                sb.append(location.getAddrStr());
+                sb.append("\ndescribe : ");
+                sb.append("gps定位成功");
+
+            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {// 网络定位结果
+                sb.append("\naddr : ");
+                sb.append(location.getAddrStr());
+                //运营商信息
+                sb.append("\noperationers : ");
+                sb.append(location.getOperators());
+                sb.append("\ndescribe : ");
+                sb.append("网络定位成功");
+            } else if (location.getLocType() == BDLocation.TypeOffLineLocation) {// 离线定位结果
+                sb.append("\ndescribe : ");
+                sb.append("离线定位成功，离线定位结果也是有效的");
+            } else if (location.getLocType() == BDLocation.TypeServerError) {
+                sb.append("\ndescribe : ");
+                sb.append("服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因");
+            } else if (location.getLocType() == BDLocation.TypeNetWorkException) {
+                sb.append("\ndescribe : ");
+                sb.append("网络不同导致定位失败，请检查网络是否通畅");
+            } else if (location.getLocType() == BDLocation.TypeCriteriaException) {
+                sb.append("\ndescribe : ");
+                sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
+            }
+            sb.append("\nlocationdescribe : ");
+            sb.append(location.getLocationDescribe());// 位置语义化信息
+            List<Poi> list = location.getPoiList();// POI数据
+            if (list != null) {
+                sb.append("\npoilist size = : ");
+                sb.append(list.size());
+                for (Poi p : list) {
+                    sb.append("\npoi= : ");
+                    sb.append(p.getId() + " " + p.getName() + " " + p.getRank());
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(insr2!=null){
-                try {
-                    insr2.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if(br2!=null){
-                try {
-                    br2.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            Log.i("BaiduLocationApiDem", sb.toString());
         }
     }
 
+
+
+    private void initLocation(){
+        LocationClientOption option = new LocationClientOption();
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
+        );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+        option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
+        int span=1000;
+        option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
+        option.setOpenGps(true);//可选，默认false,设置是否使用gps
+        option.setLocationNotify(true);//可选，默认false，设置是否当gps有效时按照1S1次频率输出GPS结果
+        option.setIsNeedLocationDescribe(true);//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+        option.setIsNeedLocationPoiList(true);//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+        option.setIgnoreKillProcess(false);//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+        option.SetIgnoreCacheException(false);//可选，默认false，设置是否收集CRASH信息，默认收集
+        option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
+        mLocationClient.setLocOption(option);
+    }
 
 }

@@ -281,6 +281,9 @@
         <activity android:name=".view.GestureFilpActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".baidu_map_first.LocationDemo"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
