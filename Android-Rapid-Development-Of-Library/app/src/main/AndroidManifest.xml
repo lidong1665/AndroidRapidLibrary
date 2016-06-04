@@ -274,6 +274,11 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="bAq10KCXfuek1pjblnjp9yiMZCSAeUiw"/>
 
+        <service android:enabled="true"
+            android:name="com.baidu.location.f"
+            android:process=":remote">
+        </service>
+
         <activity android:name=".baidu_map_first.BaiduMapFirstActivity">
         </activity>
         <activity android:name=".baidu_map_first.DisplayBaiduMapActivity">
