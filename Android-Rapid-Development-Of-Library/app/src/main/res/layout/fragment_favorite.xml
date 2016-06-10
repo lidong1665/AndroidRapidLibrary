@@ -40,5 +40,11 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:text=" Android中答题器的实现"/>
+    <Button
+        android:id="@+id/btn_realm_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text=" Android中Realm数据库的学习"/>
 
 </LinearLayout>

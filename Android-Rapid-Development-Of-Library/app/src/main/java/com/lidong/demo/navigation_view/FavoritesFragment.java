@@ -13,6 +13,7 @@ import com.lidong.demo.eventbus.EventBusDemo1Activity;
 import com.lidong.demo.gpush.GetuiSdkDemoActivity;
 import com.lidong.demo.greendao.GreenDaoActivity;
 import com.lidong.demo.mvp.WeiXinWebViewActivity;
+import com.lidong.demo.realm.DemoRealmActivity;
 import com.lidong.demo.recyclerViewDemo.RecyclerViewDemoActivity;
 import com.lidong.demo.view.GestureFilpActivity;
 
@@ -61,7 +62,7 @@ public class FavoritesFragment extends Fragment {
     }
 
     @OnClick({R.id.btn_event_layout, R.id.btn_greendao_layout, R.id.btn_recycleview_layout,
-            R.id.btn_gpush_layout,R.id.btn_snswer_layout})
+            R.id.btn_gpush_layout,R.id.btn_snswer_layout,R.id.btn_realm_demo})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_event_layout:
@@ -78,6 +79,9 @@ public class FavoritesFragment extends Fragment {
                 break;
             case R.id.btn_snswer_layout:
                 startActivity(new Intent(getActivity(), GestureFilpActivity.class));
+                break;
+            case R.id.btn_realm_demo:
+                startActivity(new Intent(getActivity(), DemoRealmActivity.class));
                 break;
         }
     }
