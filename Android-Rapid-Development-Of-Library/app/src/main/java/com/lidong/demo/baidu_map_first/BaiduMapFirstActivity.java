@@ -229,60 +229,6 @@ public class BaiduMapFirstActivity extends AppCompatActivity implements
     }
 
 
-//    public static void getCityFromLngAndlat(String ss)
-//    {
-////       http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&callback=renderReverse&location=39.983424,116.322987&output=json&pois=1
-////        http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location=39.963175,116.400244&output=json&pois=1
-////通过修改这里的location（经纬度）参数，即可得到相应经纬度的详细信息
-//        String url2 = "http://api.map.baidu.com/geocoder/v2/?ak=bAq10KCXfuek1pjblnjp9yiMZCSAeUiw&location="+ss+"&output=json&pois=1 ";
-//        URL myURL2 = null;
-//        URLConnection httpsConn2 = null;
-//        try {
-//            myURL2 = new URL(url2);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//        InputStreamReader insr2 = null;
-//        BufferedReader br2 = null;
-//        try {
-//            httpsConn2 = (URLConnection) myURL2.openConnection();// 不使用代理
-//            if (httpsConn2 != null) {
-//                insr2 = new InputStreamReader( httpsConn2.getInputStream(), "UTF-8");
-//                br2 = new BufferedReader(insr2);
-//                String data2 = br2.readLine();
-//                try
-//                {
-//                    //解析得到的json格式数据
-//                    JSONObject dataJson = new JSONObject(data2);
-////                    JSONObject result = dataJson.getJSONObject("result");
-////                    JSONObject addressComponent = result.getJSONObject("addressComponent");
-////                    String city = addressComponent.getString("city");
-//                    System.out.println("city = " + data2);
-//                } catch (JSONException e)
-//                {
-//                    e.printStackTrace();
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if(insr2!=null){
-//                try {
-//                    insr2.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            if(br2!=null){
-//                try {
-//                    br2.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
-
     public class MyLocationListener implements BDLocationListener {
 
         @Override

@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
 buildscript {
+
     repositories {
         jcenter()
-
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath "io.realm:realm-gradle-plugin:1.0.0"
     }
 }
 android {
@@ -64,6 +67,7 @@ android {
         release.setRoot('build-types/release')
     }
     productFlavors {
+
     }
 }
 
@@ -91,4 +95,5 @@ dependencies {
     compile 'com.github.arimorty:floatingsearchview:1.1.2'
     compile files('libs/locSDK_6.13.jar')
     compile 'com.android.support:multidex:1.0.1'
+//    compile 'io.realm:realm-android:0.84.1'
 }

@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.lidong.demo"
-          android:versionCode="100">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lidong.demo"
+    android:versionCode="100">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- 个推SDK权限配置开始 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <!-- 支持iBeancon 需要蓝牙权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <!-- 支持个推3.0 电子围栏功能 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 浮动通知权限 -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 自定义权限 -->
-    <uses-permission android:name="getui.permission.GetuiService.com.lidong.demo"/>
+    <uses-permission android:name="getui.permission.GetuiService.com.lidong.demo" />
 
     <permission
         android:name="getui.permission.GetuiService.com.lidong.demo"
-        android:protectionLevel="normal"/>
+        android:protectionLevel="normal" />
     <!-- 个推SDK权限配置结束 -->
 
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <!-- 这个权限用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 这个权限用于访问GPS定位 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!-- 用于读取手机当前的状态 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 访问网络，网络定位需要上网 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="false"
         android:resizeable="true"
-        android:smallScreens="true"/>
+        android:smallScreens="true" />
 
     <application
         android:name=".TApplication"
@@ -64,45 +64,45 @@
         android:theme="@style/AppBaseTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".mvp.DWeatherActivity"
             android:label="@string/title_activity_weather"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".mvp_dagger2.WeatherActivity"
             android:label="@string/title_activity_weather"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".view.CircleProgressViewActivity"
             android:label="@string/title_activity_circle_progress_view"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".gpush.GetuiSdkDemoActivity"
             android:label="@string/title_activity_test_web_view_fragment"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
 
         <!-- 个推SDK配置开始 -->
         <!-- 配置的第三方参数属性 -->
         <meta-data
             android:name="PUSH_APPID"
-            android:value="2TP3FVe28v50iTvkffYio5"/>
+            android:value="2TP3FVe28v50iTvkffYio5" />
         <meta-data
             android:name="PUSH_APPKEY"
-            android:value="0DFJrDtPPn7vVnGYhptBt7"/>
+            android:value="0DFJrDtPPn7vVnGYhptBt7" />
         <meta-data
             android:name="PUSH_APPSECRET"
-            android:value="n7Qd3Z0wjP94vzENSQ9Lb5"/>
+            android:value="n7Qd3Z0wjP94vzENSQ9Lb5" />
         <!-- 配置第三方Receiver -->
         <receiver
             android:name=".gpush.PushDemoReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5"/>
+                <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
             </intent-filter>
         </receiver>
         <!-- 配置SDK核心服务 -->
@@ -110,29 +110,29 @@
             android:name="com.igexin.sdk.PushService"
             android:exported="true"
             android:label="NotificationCenter"
-            android:process=":pushservice"/>
+            android:process=":pushservice" />
         <service
             android:name="com.igexin.sdk.PushServiceUser"
             android:exported="true"
-            android:label="NotificationCenterUser"/>
+            android:label="NotificationCenterUser" />
 
         <receiver android:name="com.igexin.sdk.PushReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-                <action android:name="android.intent.action.USER_PRESENT"/>
-                <action android:name="com.igexin.sdk.action.refreshls"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
                 <!-- 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 -->
-                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
         <receiver
             android:name="com.igexin.sdk.PushManagerReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.igexin.sdk.action.pushmanager"/>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
             </intent-filter>
         </receiver>
 
@@ -142,22 +142,22 @@
             android:exported="false"
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.igexin.sdk.GActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:process=":pushservice"
             android:taskAffinity="com.igexin.sdk.PushActivityTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="com.igexin.download.DownloadService"
-            android:process=":pushservice"/>
+            android:process=":pushservice" />
 
         <receiver android:name="com.igexin.download.DownloadReceiver">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
@@ -166,7 +166,7 @@
             android:authorities="downloads.com.lidong.demo"
             android:exported="true"
             android:process=":pushservice"
-            tools:replace="android:authorities"/>
+            tools:replace="android:authorities" />
 
         <activity
             android:name="com.igexin.getuiext.activity.GetuiExtActivity"
@@ -175,120 +175,114 @@
             android:exported="false"
             android:process=":pushservice"
             android:taskAffinity="android.task.myServicetask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver
             android:name="com.igexin.getuiext.service.PayloadReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4"/>
-                <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5"/>
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <action android:name="com.igexin.sdk.action.2TP3FVe28v50iTvkffYio5" />
             </intent-filter>
         </receiver>
 
         <service
             android:name="com.igexin.getuiext.service.GetuiExtService"
-            android:process=":pushservice"/>
+            android:process=":pushservice" />
         <!-- 个推SDK配置结束 -->
 
         <activity
             android:name=".gpush.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".rule.RulerActivity"
             android:label="@string/title_activity_ruler"
             android:screenOrientation="portrait"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".switchLayout.SwitchLayoutDemoActivity"
             android:label="@string/title_activity_switch_layout_demo"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".recyclerViewDemo.RecyclerViewDemoActivity"
-            android:label="@string/title_activity_recycler_view_demo"/>
+            android:label="@string/title_activity_recycler_view_demo" />
         <activity
             android:name=".recyclerViewDemo.RecyclerViewActivity"
-            android:label="@string/title_activity_recycler_view_demo"/>
+            android:label="@string/title_activity_recycler_view_demo" />
         <activity
             android:name=".recyclerViewDemo.SwipeListViewActivity"
             android:label="@string/title_activity_recycler_view_demo"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".shuffling_pages.ShufflingPagerActivity"
             android:label="@string/title_activity_shuffling_pager"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".tablayout.TestTabLayoutActivity"
             android:label="@string/title_activity_test_tab_layout"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".segmentcontrol.SegmentControlActivity"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".rule.RulerHeightActivity"
             android:label="@string/title_activity_ruler_height"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".eventbus.EventBusDemo1Activity"
             android:label="@string/title_activity_event_bus_demo1"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".eventbus.EventBusDemo2Activity"
             android:label="@string/title_activity_event_bus_demo2"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".greendao.GreenDaoActivity"
             android:label="@string/title_activity_green_dao"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".navigation_view.BottomNavigationBarDemoActivity"
             android:label="@string/title_activity_navigation_view_demo"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="56d8d98ae0f55ad903001919"/>
+            android:value="56d8d98ae0f55ad903001919" />
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="Wandoujia"/>
+            android:value="Wandoujia" />
 
         <activity
             android:name=".view.ExtenpListViewActivity"
-            android:theme="@style/AppBaseTheme"/>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".view.TagFlowLayoutActivity"
             android:label="@string/title_activity_tag_flow_layout"
-            android:theme="@style/AppBaseTheme">
-        </activity>
-        <activity android:name=".mvp.WeixinNewsActivity">
-        </activity>
-        <activity android:name=".mvp.WeiXinWebViewActivity">
-        </activity>
-        <activity android:name=".mvp.DreamDataActivity">
-        </activity>
-        <activity android:name=".mvp.SearchDreamActivity">
-        </activity>
+            android:theme="@style/AppBaseTheme"></activity>
+        <activity android:name=".mvp.WeixinNewsActivity"></activity>
+        <activity android:name=".mvp.WeiXinWebViewActivity"></activity>
+        <activity android:name=".mvp.DreamDataActivity"></activity>
+        <activity android:name=".mvp.SearchDreamActivity"></activity>
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="bAq10KCXfuek1pjblnjp9yiMZCSAeUiw"/>
+            android:value="bAq10KCXfuek1pjblnjp9yiMZCSAeUiw" />
 
-        <service android:enabled="true"
+        <service
             android:name="com.baidu.location.f"
-            android:process=":remote">
-        </service>
+            android:enabled="true"
+            android:process=":remote"></service>
 
-        <activity android:name=".baidu_map_first.BaiduMapFirstActivity">
-        </activity>
-        <activity android:name=".baidu_map_first.DisplayBaiduMapActivity">
-        </activity>
-        <activity android:name=".view.GestureFilpActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".baidu_map_first.LocationDemo"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity android:name=".baidu_map_first.BaiduMapFirstActivity"></activity>
+        <activity android:name=".baidu_map_first.DisplayBaiduMapActivity"></activity>
+        <activity
+            android:name=".view.GestureFilpActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".baidu_map_first.LocationDemo"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".realm.DemoRealmActivity"></activity>
     </application>
 
 </manifest>
