@@ -314,7 +314,7 @@ public class GetuiSdkDemoActivity extends AppCompatActivity implements OnClickLi
                             tagParam[i] = t;
                         }
 
-                        int i = PushManager.getInstance().setTag(context, tagParam);
+                        int i = PushManager.getInstance().setTag(context, tagParam,"");
                         String text = "ERROR";
 
                         switch (i) {

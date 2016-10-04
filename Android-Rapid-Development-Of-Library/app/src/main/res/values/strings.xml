@@ -43,4 +43,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_tag_flow_layout">TagFlowLayoutActivity</string>
+    <string name="hint_search">请输入搜索内容</string>
+    <string name="title_activity_search_view">SearchViewActivity</string>
 </resources>

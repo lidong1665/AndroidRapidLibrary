@@ -20,7 +20,15 @@ import com.lidong.demo.view.GestureFilpActivity;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+/**
+*@packageName:com.lidong.demo.navigation_view
+*@className:FavoritesFragment
+*@desc:
+*@author:lidong
+*@datetime:16/6/14 下午9:55
+*@company:chni
+*@qq:1561281670
+*/
 public class FavoritesFragment extends Fragment {
 
     @Bind(R.id.btn_event_layout)

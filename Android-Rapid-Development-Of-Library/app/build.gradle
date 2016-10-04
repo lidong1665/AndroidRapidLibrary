@@ -29,7 +29,7 @@ android {
     }
     defaultConfig {
         applicationId "com.lidong.demo"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 100
         versionName "1.0.0"
@@ -83,6 +83,7 @@ dependencies {
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.android.support:cardview-v7:23.2.1'
+    compile 'com.android.support:percent:23.2.1'
     compile files('libs/json_simple-1.1.jar')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'de.greenrobot:greendao:2.1.0'
@@ -96,4 +97,5 @@ dependencies {
     compile files('libs/locSDK_6.13.jar')
     compile 'com.android.support:multidex:1.0.1'
 //    compile 'io.realm:realm-android:0.84.1'
+    compile 'com.github.mzule.fantasyslide:library:1.0.4'
 }

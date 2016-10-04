@@ -4,20 +4,21 @@
 
     <!-- 基本应用的主题. -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <!-- Customize your theme here. -->
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:textSize">16sp</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="MenuTextStyle">
         <item name="android:textColor">@color/white</item>
@@ -61,6 +62,22 @@
         <item name="android:textColor">#ffeeeeee</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppBaseTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppBaseTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <style name="MenuText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:drawablePadding">10dp</item>
     </style>
 
 </resources>

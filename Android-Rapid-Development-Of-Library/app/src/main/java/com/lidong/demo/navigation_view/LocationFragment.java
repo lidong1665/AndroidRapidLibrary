@@ -15,6 +15,7 @@ import com.lidong.demo.shuffling_pages.ShufflingPagerActivity;
 import com.lidong.demo.tablayout.TestTabLayoutActivity;
 import com.lidong.demo.view.CircleProgressViewActivity;
 import com.lidong.demo.view.ExtenpListViewActivity;
+import com.lidong.demo.view.SearchViewActivity;
 import com.lidong.demo.view.TagFlowLayoutActivity;
 
 import butterknife.Bind;
@@ -37,6 +38,8 @@ public class LocationFragment extends Fragment {
     Button mBtnRulerLayout;
     @Bind(R.id.btn_lun_bo_layout)
     Button mBtnLunBoLayout;
+    @Bind(R.id.btn_search_menu_layout)
+    Button mBtnSearchMenu;
 
     public static LocationFragment newInstance(String param1) {
         LocationFragment fragment = new LocationFragment();
@@ -71,7 +74,7 @@ public class LocationFragment extends Fragment {
     }
 
     @OnClick({R.id.btn_circle_progress_view, R.id.btn_tag_layout, R.id.btn_tab_layout
-            , R.id.btn_expandable_layout, R.id.btn_fengdaun_layout, R.id.btn_ruler_layout})
+            , R.id.btn_expandable_layout, R.id.btn_fengdaun_layout, R.id.btn_ruler_layout,R.id.btn_search_menu_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_circle_progress_view:
@@ -91,6 +94,9 @@ public class LocationFragment extends Fragment {
                 break;
             case R.id.btn_ruler_layout:
                 startActivity(new Intent(getActivity(), RulerActivity.class));
+                break;
+            case R.id.btn_search_menu_layout:
+                startActivity(new Intent(getActivity(), SearchViewActivity.class));
                 break;
         }
     }

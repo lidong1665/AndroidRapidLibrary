@@ -1,5 +1,7 @@
 package com.lidong.demo.mvp_dagger2.model;
 
+import rx.Subscription;
+
 /**
  *
  * Created by lidong on 2016/3/2.
@@ -10,7 +12,7 @@ public interface WeatherModel {
      * @param format
      * @param city
      */
-    void getWeatherData(String format, String city);
+    Subscription getWeatherData(String format, String city);
 
 
 }

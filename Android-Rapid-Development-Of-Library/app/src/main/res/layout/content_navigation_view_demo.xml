@@ -12,13 +12,116 @@
         android:layout_width="match_parent"
          android:layout_height="match_parent"
         android:orientation="vertical" />
-    <!--<View-->
-        <!--android:layout_above="@id/tb"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:id="@+id/line"-->
-        <!--android:background="@color/blue">-->
-    <!--</View>-->
+
+    <com.github.mzule.fantasyslide.FantasyDrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <com.github.mzule.fantasyslide.SideBar
+            android:id="@+id/leftSideBar"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            app:maxTranslationX="66dp">
+
+            <LinearLayout
+                android:id="@+id/userInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:gravity="center_horizontal"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_launcher"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mzule"
+                    android:textColor="@color/red"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/MenuText"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:text="朋友圈" />
+
+            <TextView
+                style="@style/MenuText"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:text="钱包" />
+
+            <TextView
+                style="@style/MenuText"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:text="优惠券" />
+
+            <TextView
+                style="@style/MenuText"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:text="好友" />
+
+            <TextView
+                style="@style/MenuText"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:text="设置" />
+        </com.github.mzule.fantasyslide.SideBar>
+
+        <com.github.mzule.fantasyslide.SideBar
+            android:id="@+id/rightSideBar"
+            android:layout_width="133dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@drawable/ic_launcher"
+            android:gravity="center_vertical|right"
+            app:maxTranslationX="-33dp">
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期一" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期二" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期三" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期四" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期五" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期六" />
+
+            <TextView
+                style="@style/MenuText"
+                android:text="星期日" />
+        </com.github.mzule.fantasyslide.SideBar>
+    </com.github.mzule.fantasyslide.FantasyDrawerLayout>
+
+
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"

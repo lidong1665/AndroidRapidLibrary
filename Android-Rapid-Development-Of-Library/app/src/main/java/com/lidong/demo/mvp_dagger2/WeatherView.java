@@ -11,4 +11,6 @@ public interface WeatherView {
     void showProgress();
     void hideProgress();
     void loadWeather(WeatherData weatherData);
+
+
 }

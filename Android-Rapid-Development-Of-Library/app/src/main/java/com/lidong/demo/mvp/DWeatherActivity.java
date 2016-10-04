@@ -91,6 +91,7 @@ public class DWeatherActivity extends BaseActivity implements WeatherView {
     public void hideProgress() {
         LoadingUIHelper.hideDialogForLoading();
         Toast.makeText(this,"你的免费数据已经用完",Toast.LENGTH_SHORT).show();
+        mWeatherPresenter.onUnsubscribe();
     }
 
     @Override
@@ -112,4 +113,12 @@ public class DWeatherActivity extends BaseActivity implements WeatherView {
         View view = getWindow().getDecorView();
         view.setBackgroundColor(getResources().getColor(R.color.red));
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mWeatherPresenter.onUnsubscribe();
+    }
+
+
 }

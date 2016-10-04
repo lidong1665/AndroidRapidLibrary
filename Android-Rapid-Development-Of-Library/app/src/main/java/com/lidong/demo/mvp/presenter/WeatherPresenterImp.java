@@ -10,7 +10,7 @@ import com.lidong.demo.mvp.view.WeatherView;
 /**
  * Created by lidong on 2016/3/2.
  */
-public class WeatherPresenterImp  implements WeatherPresenter,WeatherModelImp.WeatherOnListener{
+public class WeatherPresenterImp  extends WeatherPresenter  implements WeatherModelImp.WeatherOnListener{
 
     /**
      * WeatherModel和WeatherView都是通过接口来实现，这就Java设计原则中依赖倒置原则使用
@@ -26,7 +26,7 @@ public class WeatherPresenterImp  implements WeatherPresenter,WeatherModelImp.We
     @Override
     public void getWeatherData(String format, String city) {
         mWeatherView.showProgress();
-        mWeatherModel.getWeatherData(format,city);
+        addSubscription(mWeatherModel.getWeatherData(format,city));
     }
 
     @Override

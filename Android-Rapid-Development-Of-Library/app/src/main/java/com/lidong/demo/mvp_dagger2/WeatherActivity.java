@@ -85,4 +85,11 @@ public class WeatherActivity extends BaseActivity implements com.lidong.demo.mvp
         textView8.setText("穿衣建议："+weatherData.getResult().getToday().getDressing_advice());
         textView9.setText("旅游指数："+weatherData.getResult().getToday().getTravel_index());
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mWeatherPresenter.onUnsubscribe();
+    }
 }

@@ -62,7 +62,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".navigation_view.BottomNavigationBarDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -241,10 +241,10 @@
             android:name=".greendao.GreenDaoActivity"
             android:label="@string/title_activity_green_dao"
             android:theme="@style/AppBaseTheme" />
-        <activity
-            android:name=".navigation_view.BottomNavigationBarDemoActivity"
-            android:label="@string/title_activity_navigation_view_demo"
-            android:theme="@style/AppBaseTheme" />
+        <!--<activity-->
+            <!--android:name=".navigation_view.BottomNavigationBarDemoActivity"-->
+            <!--android:label="@string/title_activity_navigation_view_demo"-->
+            <!--android:theme="@style/AppBaseTheme" />-->
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -259,11 +259,11 @@
         <activity
             android:name=".view.TagFlowLayoutActivity"
             android:label="@string/title_activity_tag_flow_layout"
-            android:theme="@style/AppBaseTheme"></activity>
-        <activity android:name=".mvp.WeixinNewsActivity"></activity>
-        <activity android:name=".mvp.WeiXinWebViewActivity"></activity>
-        <activity android:name=".mvp.DreamDataActivity"></activity>
-        <activity android:name=".mvp.SearchDreamActivity"></activity>
+            android:theme="@style/AppBaseTheme" />
+        <activity android:name=".mvp.WeixinNewsActivity" />
+        <activity android:name=".mvp.WeiXinWebViewActivity" />
+        <activity android:name=".mvp.DreamDataActivity" />
+        <activity android:name=".mvp.SearchDreamActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -272,17 +272,40 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".baidu_map_first.BaiduMapFirstActivity"></activity>
-        <activity android:name=".baidu_map_first.DisplayBaiduMapActivity"></activity>
+        <activity android:name=".baidu_map_first.BaiduMapFirstActivity" />
+        <activity android:name=".baidu_map_first.DisplayBaiduMapActivity" />
         <activity
             android:name=".view.GestureFilpActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".baidu_map_first.LocationDemo"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".realm.DemoRealmActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".realm.DemoRealmActivity" />
+        <activity
+            android:name=".view.SearchViewActivity"
+            android:label="@string/title_activity_search_view"
+            android:theme="@style/AppBaseTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable"/>
+
+        </activity>
+
+        <provider
+        android:name=".view.provider.DreamSuggestionProvider"
+        android:authorities="com.lidong.demo.dreamsuggestion"
+        android:enabled="true"
+        android:exported="true">
+
+        </provider>
+
+
     </application>
 
 </manifest>

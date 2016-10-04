@@ -85,4 +85,15 @@
         android:layout_alignParentTop="true"
         android:gravity="left"
         android:text="Android中轮播页的实现"/>
+    <Button
+        android:id="@+id/btn_search_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:text="Android中搜索框的实现"/>
 </LinearLayout>

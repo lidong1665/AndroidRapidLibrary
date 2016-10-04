@@ -5,6 +5,8 @@ import com.lidong.demo.mvp_dagger2.WeatherActivity;
 import com.lidong.demo.mvp_dagger2.model.WeatherModel;
 import com.lidong.demo.mvp_dagger2.model.WeatherModelImp;
 
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
 
 public class WeatherActivityPresenter implements WeatherModelImp.WeatherOnListener{
      WeatherActivity weatherActivity;
@@ -21,7 +23,7 @@ public class WeatherActivityPresenter implements WeatherModelImp.WeatherOnListen
      * @param city
      */
     public void getWeatherData(String format, String city){
-        mWeatherModel.getWeatherData(format,city);
+        addSubscription(mWeatherModel.getWeatherData(format,city));
         weatherActivity.showProgress();
     }
 
@@ -35,5 +37,22 @@ public class WeatherActivityPresenter implements WeatherModelImp.WeatherOnListen
     @Override
     public void onFailure(Throwable e) {
         weatherActivity.hideProgress();
+    }
+
+    CompositeSubscription mCompositeSubscription;
+
+    //RXjava取消注册，以避免内存泄露
+    public void onUnsubscribe() {
+        if (mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions()) {
+            mCompositeSubscription.unsubscribe();
+        }
+    }
+
+    //RXjava注册
+    public void addSubscription(Subscription subscriber) {
+        if (mCompositeSubscription == null) {
+            mCompositeSubscription = new CompositeSubscription();
+        }
+        mCompositeSubscription.add(subscriber);
     }
 }
