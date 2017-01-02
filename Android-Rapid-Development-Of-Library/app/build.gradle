@@ -79,7 +79,7 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     //个推
     compile 'com.getui:sdk:+'
-    compile 'com.getui:ext:+'
+    //compile 'com.getui:ext:+' 个推2.9之后移除该库
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.android.support:cardview-v7:23.2.1'
